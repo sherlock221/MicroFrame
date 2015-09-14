@@ -1,0 +1,30 @@
+<ul class="micro-panel-list">
+        <li class="panel-item" ng-repeat="txt in textList">
+                <a href="javascript:void(0)" ng-click="goDetail(txt)">
+                        <div class="title fx-row">
+                                <h5 class="fx-col">{{txt.title}}</h5>
+                                <i class="icon arrow-right fx-col-center"></i>
+                        </div>
+                        <div class="panel-item-content" ng-bind-html="txt.summaryContent"></div>
+                </a>
+
+                <div class="mask-layer ">
+                        <div class="mask"></div>
+                        <div class="mask-top text-center" >
+                                <i class="ib icon icon-18-edit  mr10" ng-click="editor(txt);"></i>
+                                <i class="ib icon icon-18-delete "  mwl-confirm title="提示操作"  on-confirm="removeMicroItem(txt)"   message="是否删除 ({{txt.title}}) 这条记录?"  confirm-text="确定"    cancel-text="取消" ></i>
+                        </div>
+                </div>
+
+
+        </li>
+
+
+
+        <li class="panel-item panel-util" >
+                <a class="ib addText text-center" ng-click="add();">
+                        <i class="icon ib icon-36-add"></i>
+                </a>
+        </li>
+
+</ul>

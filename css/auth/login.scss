@@ -1,0 +1,103 @@
+.no-ng.ng-animate { -webkit-animation: none 0s; }
+
+
+
+  .loginWhole {
+    @include transition(10s 0s all linear);
+    @include transform(scale(1.2));
+    background-position: center center;
+    background-image: url("../imgs/bg02.jpg");
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    &.ani{
+     @include transform(scale(1));
+    }
+  }
+
+  .loginLayer {
+    .bg-col-left {
+      color: #ffffff;
+      & > p {
+        letter-spacing: 1px;
+        font-size: 26px;
+      }
+    }
+   .school-num{
+     font-size: 50px;
+     padding: 0 10px;
+    position: relative;
+    top: 6px;
+    }
+    .form-signin {
+      display: inline-block;
+      margin-right: 0;
+      text-align: left;
+      width: 380px;
+      padding: 15px 35px 45px;
+      background-color: #fff;
+      //border: 1px solid rgba(0,0,0,0.1);
+      border-radius: 10px;
+      .form-signin-heading,
+      .checkbox {
+
+
+        a {
+          color: #969695;
+        }
+      }
+      .form-signin-heading{
+        color:#545454;
+        font-size: 25px;
+      }
+      .checkbox {
+        color:#545454;
+        margin-left: 20px;
+        font-weight: normal;
+
+        margin-bottom: 62px;
+        overflow: inherit;
+      }
+
+      .form-control {
+        position: relative;
+        font-size: 16px;
+        height: auto;
+        padding: 10px;
+
+        &:focus {
+          z-index: 2;
+          border-color: #cccccc;
+        }
+      }
+
+      input[type="text"] {
+        margin-bottom: -1px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      input[type="password"] {
+        margin-bottom: 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+
+      .font-org {
+        background-color: #ffa92d;
+        color: #ffffff;
+      }
+    }
+
+  }
+
+
+
+
+
+
+

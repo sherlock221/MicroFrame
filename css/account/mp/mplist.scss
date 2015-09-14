@@ -1,0 +1,29 @@
+.account-area{
+  border:1px solid $border-light-gray;
+  .title{
+    height:40px;
+    line-height:40px;
+    font-size: 14px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 20px;
+    color:black;
+    background-color: $bg-light-gray;
+    border-bottom: 1px solid $border-light-gray;
+  }
+  ul{
+    li{
+      font-size: 14px;
+      border-bottom:1px solid $border-light-gray;
+      padding: 20px;
+    }
+    .left-text{
+    color:gray;
+      width: 200px;
+    }
+  }
+}
+.ib{
+  display: inline-block;
+}
+

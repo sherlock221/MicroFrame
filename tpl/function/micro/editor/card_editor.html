@@ -1,0 +1,54 @@
+<!-- 封面图片 -->
+<div class="form-style-item" >
+    <label class="form-style-label fix">
+        <strong class="title">{{currentMenu.menuName == "教师风采" ? "教师头像" : "班级头像"}}</strong>
+        <p class="tips">（必填）</p>
+    </label>
+    <button type="button"   ngf-select   ngf-change="uploadPic($files,$event,'info')" class="btn btn-default  btn-long">上传封面</button>
+    <p class="upload-img" ng-if="editorItem.photoImgUrl">
+        <img ng-src="{{editorItem.photoImgUrl}}"   />
+    </p>
+</div>
+
+
+<!-- 标题 -->
+<div class="form-style-item" >
+    <label class="form-style-label fix">
+
+
+        <!-- 名称 惠林改-->
+        <strong class="title">{{currentMenu.menuName == "教师风采" ? "教师名称" : "班级名称"}}</strong>
+
+
+        <p class="tips">（必填）</p>
+    </label>
+        <input-area content="editorItem.teacherName" txt-length="10"   is-out="isTitleOut" ></input-area>
+</div>
+
+
+<!-- 职称 -->
+<div class="form-style-item" >
+    <label class="form-style-label fix">
+        <strong class="title">{{currentMenu.menuName == "教师风采" ? "教师职位" : "年级名称"}}</strong>
+        <p class="tips">（必填）</p>
+    </label>
+    <input-area content="editorItem.jobType" txt-length="10"   is-out="isJobOut" ></input-area>
+</div>
+
+
+<!-- 内容 -->
+<div class="form-style-item">
+    <label class="form-style-label fix">
+        <strong class="title">详细描述</strong>
+        <p class="tips">（必填）</p>
+
+</label>
+
+    <!--富文本 -->
+    <div
+            config="$root.editor.configBase"
+            ng-model="editorItem.teacherDesc"
+            lock-umeditor  style="width: 100%;" required>
+    </div>
+
+</div>

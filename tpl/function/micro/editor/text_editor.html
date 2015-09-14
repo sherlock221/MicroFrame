@@ -1,0 +1,28 @@
+<!-- 标题 -->
+<div class="form-style-item" >
+
+    <label class="form-style-label fix">
+        <strong class="title">标题</strong>
+        <p class="tips">（必填）</p>
+    </label>
+
+    <input-area content="editorItem.title" txt-length="30"   is-out="isTitleOut" ></input-area>
+
+</div>
+
+<!-- 内容 -->
+<div class="form-style-item">
+    <label class="form-style-label fix">
+        <strong class="title">内容</strong>
+        <p class="tips">（必填）</p>
+    </label>
+
+
+    <!--富文本 -->
+    <div
+         config="$root.editor.configBase"
+         ng-model="editorItem.content"
+         lock-umeditor  style="width: 100%;">
+    </div>
+
+</div>

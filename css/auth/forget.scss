@@ -1,0 +1,32 @@
+
+
+.modal-forget-Header {
+  line-height: 52px;
+  height: 52px;
+  border-bottom-width: 0;
+  position: relative;
+  top: 0px;
+  padding: 0 20px;
+  background-color: #f4f5f9;
+  background-image: -moz-linear-gradient(top, #f4f5f9 0, #f4f5f9 100%);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f4f5f9), to(#f4f5f9));
+  background-image: -webkit-linear-gradient(top, #f4f5f9 0, #f4f5f9 100%);
+  background-image: -o-linear-gradient(top, #f4f5f9 0, #f4f5f9 100%);
+  background-image: linear-gradient(to bottom, #f4f5f9 0, #f4f5f9 100%);
+
+
+
+  h3 {
+    font-weight: 400;
+    font-style: normal;
+    line-height: 52px;
+    font-size: 20px;
+  }
+
+
+  .forget-close{
+    position: relative;
+    top: 13px;
+  }
+
+}

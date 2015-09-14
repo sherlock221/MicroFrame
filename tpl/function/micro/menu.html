@@ -1,0 +1,11 @@
+<h1 class="text-center micro-index-title">欢迎您入园</h1>
+<ul class="micro-button-list">
+        <li ng-repeat="menu in menuList" ng-if="menu.menuName !='首页' ">
+                <a href="javascript:void(0)" ng-click="searchSubObj(menu)"   ng-style={'backgroundColor':menu.iconColor}   class="ib ">
+                        <i class="block micro-{{menu.iconName}} micro-icon"></i>
+                </a>
+                <div>
+                        <span>{{menu.menuName}}</span>
+                </div>
+        </li>
+</ul>

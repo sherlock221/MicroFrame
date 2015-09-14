@@ -1,0 +1,28 @@
+<section class="micro-detail">
+<div class="detail detail-imgText">
+
+
+    <div class="detail-card-info clearFix">
+        <div class="pull-left">
+            <img ng-src="{{detailInfo.photoImgUrl}}"  class="micro-card-header" />
+        </div>
+
+
+
+        <div class="pull-left ml10 text-center">
+            <h5 class="titleName">{{detailInfo.teacherName}}</h5>
+            <div class="jobType"> {{detailInfo.jobType == "" ? "没有职位" : detailInfo.jobType}}</div>
+        </div>
+
+
+    </div>
+
+
+    <hr class=""/>
+    <div class="text-left">
+            <div ng-bind-html="detailInfo.teacherDesc">
+            </div>
+    </div>
+
+</div>
+</section>

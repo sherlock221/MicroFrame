@@ -1,0 +1,22 @@
+
+
+    <div class="area-layer">
+
+        <textarea  ng-change="input();" class="area-content " ng-model="content" required></textarea>
+        <div class="area-bottom ">
+            <div class="pull-left">
+
+                <!--<emoji></emoji>-->
+                <!--<button class="btn btn-sg btn-success">插入链接</button>-->
+            </div>
+            <div class="pull-right">
+                <p class="desc" ng-show="userInput">
+                    最多输入600字(注意表情和链接都会占用字符)
+                </p>
+                <p class="desc" ng-hide="userInput" ng-class="{'area-txt-out':isOut}">
+                   {{txtShow  | txtOut}}
+                </p>
+            </div>
+        </div>
+    </div>
+

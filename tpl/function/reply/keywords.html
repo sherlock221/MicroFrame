@@ -1,0 +1,41 @@
+
+<!--<a href="javascript:void(0)"  ui-sref="app.fun.reply.addtextkeywords" class="text-ellipsis ">-->
+    <button type="button" ng-click="addKeyWords()" class="btn btn-success btn-long">
+    <span ng-hide="isSubmit" class="no-ng">+添加关键词</span>
+</button>
+<!--</a>-->
+<table class="table-content" cellspacing="0" style="margin-top: 20px;">
+    <thead class="thead">
+        <tr>
+            <th class="table_cell text-center col-md-3">
+                <div class="td_panel">关键词</div>
+            </th>
+            <th class="table_cell text-center col-md-3">
+                <div class="td_panel">回复类型</div>
+            </th>
+            <th class="table_cell  text-center col-md-3">
+                <div class="td_panel">操作</div>
+            </th>
+        </tr>
+    </thead>
+
+    <tbody class="tbody js_list_body">
+
+            <tr ng-repeat="ctx in replyList">
+                <td class="table_cell text-center col-md-3">
+                    <div class="td_panel">{{ctx.rkeys}}</div>
+                </td>
+                <td class="table_cell text-center col-md-3">
+                    <div class="td_panel">{{ ctx.replyType | formatReplyType}}</div>
+                </td>
+                <td class="table_cell text-center col-md-3">
+                    <div class="td_panel">
+                        <a href="javascript:;" class="bl-a " ng-click="editContent(ctx);">编辑</a>
+                        <a href="javascript:;" class="bl-a"   mwl-confirm title="提示操作"  on-confirm="deleteKeyReply(ctx)"   message="是否删除当前的功能?"  confirm-text="确定"    cancel-text="取消" >
+                            <span >删除</span>
+                        </a>
+                    </div>
+                </td>
+            </tr>
+    </tbody>
+</table>

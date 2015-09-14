@@ -1,0 +1,45 @@
+<div>
+
+    <ul class="micro-card-list">
+        <li ng-repeat="card in cardList" class="text-center " >
+
+            <div href="javascript:void(0)" class="block">
+
+                <div class="micro-card-header ib">
+                    <img ng-src="{{card.photoImgUrl}}"  class="teacher-head " />
+
+                    <div class="mask-layer ">
+                        <div class="mask"></div>
+
+                        <div class="mask-top text-center" style="line-height: 60px;">
+                            <i class="ib icon icon-18-edit vm" ng-click="editor(card);"></i>
+                            <i class="ib icon icon-18-delete vm"  mwl-confirm title="提示操作"  on-confirm="removeMicroItem(card)"   message="是否删除 ({{card.teacherName}}) 这条记录?"  confirm-text="确定"    cancel-text="取消"></i>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <a href="javascript:void(0);"  ng-click="goDetail(card,'card_detail')" class="block text-center  tName text-ellipsis" >
+                    {{card.teacherName}}
+                </a>
+
+                <div class="text-center  tJob text-ellipsis"  >
+                    {{card.jobType == "" ? "没有职位" : card.jobType}}
+                </div>
+
+            </div>
+        </li>
+
+        <li class="text-center">
+           <a class="ib addText" ng-click="add();">
+               <i class="icon ib icon-36-add"></i>
+
+           </a>
+        </li>
+
+    </ul>
+
+
+</div>

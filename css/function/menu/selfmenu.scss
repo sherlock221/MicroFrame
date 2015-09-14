@@ -1,0 +1,174 @@
+/**
+ * sherlock221b
+ */
+
+
+
+.msg_tips{
+  margin-bottom: 20px;
+  color: #8d8d8d;
+}
+
+.menu-layer{
+
+  border: 1px solid $border-light-gray;
+  background-color: #fff;
+
+
+   .menu-content{
+      min-height: 500px;
+     .menu-left{
+       height: inherit;
+          border-right: 1px solid $border-light-gray;
+          padding-right: 0;
+
+            .menu-list-nav{
+              background: $bg-light-gray;
+              padding: 0px 12px;
+              height: 41px;
+
+              width: 100%;
+              border-bottom : 1px solid $border-light-gray;
+            }
+
+            .menu-list{
+              .menu-item-list{
+
+                .dot{
+                  color: #d5d5d5;
+                  font-size: 10px;
+                  margin-right: 6px;
+                }
+
+                &>li{
+                  &>a{
+                    display: block;
+                    padding-left: 36px;
+                    padding-top: 6px;
+                    padding-bottom: 6px;
+                    &:hover{
+                      background: $bg-light-gray;
+                    }
+
+                    &.active{
+                      background: $bg-light-gray;
+                    }
+                  }
+                }
+
+              }
+
+              .menu-op{
+                float: right;
+                position: relative;
+                top : -1px;
+                padding-right: 13px;
+              }
+
+              &>li{
+
+                border-bottom: 1px solid $border-light-gray;
+
+                &>a{
+                  display: block;
+                  padding-left: 20px;
+                  padding-top: 6px;
+                  padding-bottom: 6px;
+
+                  &:hover{
+                    background: $bg-light-gray;
+                  }
+
+                  &.active{
+                    background: $bg-light-gray;
+                  }
+                }
+              }
+            }
+     }
+
+     .menu-right{
+        height: inherit;
+       padding-left: 0;
+
+        .menu-right-top{
+          width: 100%;
+          background: $bg-light-gray;
+          padding: 10px 12px;
+          border-bottom: 1px solid $border-light-gray;
+
+        }
+
+.menu-bs{
+
+
+  padding-left: 100px;
+  padding-right: 100px;
+  .dc{
+    padding-top: 80px;
+   text-align: center;
+    color: #8d8d8d;
+    padding-bottom: 20px;
+
+  }
+
+  .menu-op-layer{
+
+  }
+}
+
+       .menu-types{
+         text-align: center;
+          .dc{
+            padding-top: 80px;
+            color: #8d8d8d;
+            padding-bottom : 60px;
+           }
+
+         a{
+           margin-right: 35px;
+           i{
+             margin-bottom: 5px;
+           }
+
+           &:last-child{
+             margin-right: 0;
+           }
+         }
+
+
+       }
+
+
+     }
+   }
+
+   .menu-bottom{
+      background: $bg-light-gray;
+      padding: 12px 16px;
+      border-top: 1px solid $border-light-gray;
+      text-align: center;
+   }
+}
+
+.no-menu-select{
+  text-align: center;
+  p{
+    padding-top: 80px;
+    color: #8d8d8d;
+  }
+}
+
+.select-radio-list{
+  overflow: hidden;
+  clear: both;
+  padding: 0px 50px;
+
+  padding-bottom: 20px;
+
+  li{
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,127 @@
+<div class="modal-header">
+    <h3>添加文章</h3>
+</div>
+<form  name="MenuForm" novalidate  ng-submit="addMenu();">
+    <div class="modal-body" style="padding-top: 25px;">
+
+        <div class="form-style-base">
+
+            <!-- 菜单名称 -->
+            <div class="form-style-item" >
+
+                <label class="form-style-label fix">
+                    <strong class="title">菜单名称</strong>
+
+                    <p class="tips">（必填）</p>
+                </label>
+
+                <input type="text" class="form-input-default" required
+                       ng-model="menuName"/>
+
+            </div>
+
+            <!-- 菜单icon -->
+            <div class="form-style-item" >
+
+                <label class="form-style-label fix">
+                    <strong class="title">菜单icon</strong>
+                    <p class="tips">（必填）</p>
+                </label>
+
+                <ui-select  class=""  ng-model="iconName" theme="selectize" on-select="onItemIconSelect($item)">
+                    <ui-select-match placeholder="请选择一个内容" >
+                        <div>
+                            {{$select.selected.iconName}}
+                        </div>
+
+                    </ui-select-match>
+                    <ui-select-choices  class=""   repeat="icon in menuIconList | filter: $select.search">
+                        <div class="text-ellipsis" >
+                                <div class="ib micro-icon-ib">
+                                    <i class="ib micro-icon micro-{{icon.iconName}}" ></i>
+                                </div>
+                        </div>
+                    </ui-select-choices>
+                </ui-select>
+
+
+            </div>
+
+
+
+            <!-- 菜单背景 -->
+            <div class="form-style-item" >
+
+                <label class="form-style-label fix">
+                    <strong class="title">菜单背景</strong>
+                    <p class="tips">（必填）</p>
+                </label>
+
+                <ui-select  class=""  ng-model="iconColor" theme="selectize" on-select="onItemIconColorSelect($item)">
+                    <ui-select-match placeholder="请选择一个内容" >
+                        <div>
+                            {{$select.selected.iconColor}}
+                        </div>
+                    </ui-select-match>
+
+                    <ui-select-choices  class=""   repeat="icon in menuIconList | filter: $select.search">
+                        <div class="text-ellipsis" >
+
+                            <div class="ib micro-icon-ib" >
+
+                                <div class="ib"  ng-style="{'backgroundColor' : icon.iconColor}">
+                                    <i class="ib micro-icon micro-{{iconName.iconName}}" ></i>
+                                </div>
+
+                            </div>
+                        </div>
+                    </ui-select-choices>
+
+                </ui-select>
+
+            </div>
+
+
+            <!-- 菜单类型 -->
+            <div class="form-style-item" >
+
+                <label class="form-style-label fix">
+                    <strong class="title">菜单类型</strong>
+                    <p class="tips">（必填）</p>
+                </label>
+
+                <ui-select  class=""   ng-model="templateType" theme="selectize" on-select="selectMenuType($item)">
+                    <ui-select-match placeholder="请选择菜单类型" >
+                        <div>
+                            {{$select.selected.NAME}}
+                        </div>
+                    </ui-select-match>
+
+                    <ui-select-choices  class=""   repeat="temp in templateTypeList | filter: $select.search">
+                        <div class="text-ellipsis" >
+
+                                {{temp.NAME}}
+                        </div>
+                    </ui-select-choices>
+
+                </ui-select>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+
+
+        <button type="submit"   ng-disabled="MenuForm.$invalid || MenuFormSubmit"  class="btn btn-success btn-long" >
+            <i class="ib no-ng loading-icon loading-inverse" ng-show="MenuFormSubmit" ></i>
+            <span ng-hide="MenuFormSubmit" class="no-ng">确定</span>
+        </button>
+
+        <button type="button"   class="btn btn-default btn-long" ng-click="cancel()">取消</button>
+
+
+    </div>
+</form>

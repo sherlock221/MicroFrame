@@ -1,0 +1,38 @@
+{
+  "bizData": [
+    {
+      "id": 1,
+      "ruleName": "关于空气和水的家长调查问卷",
+      "keys": "儿童手绘本,绘本",
+      "userId": 123,
+      "replyId": 1,
+      "status": 1
+    },
+    {
+      "id": 2,
+      "ruleName": "关于空气和水的家长调查问卷",
+      "keys": "儿童手绘本,绘本",
+      "userId": 123,
+      "replyId": 1,
+      "status": 0
+    },
+    {
+      "id": 3,
+      "ruleName": "关于空气和水的家长调查问卷",
+      "keys": "儿童手绘本,绘本",
+      "userId": 123,
+      "replyId": 1,
+      "status": 1
+    },
+    {
+      "id": 4,
+      "ruleName": "关于空气和水的家长调查问卷",
+      "keys": "儿童手绘本,绘本",
+      "userId": 123,
+      "replyId": 1,
+      "status": 1
+    }
+  ],
+  "rtnCode": "000000",
+  "msg": ""
+}

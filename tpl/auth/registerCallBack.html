@@ -1,0 +1,22 @@
+<div class="modal-header">
+    <h3 >确认绑定</h3>
+</div>
+<form  name="updateContentForm" novalidate  ng-submit="updateContent();">
+    <div class="modal-body">
+        <div class="text-center">
+            您是否已经完成公众号的注册
+        </div>
+
+
+    </div>
+    <div class="modal-footer">
+
+        <button type="submit"  ng-click="requestMp();"  ng-disabled="isRequestMp"  class="btn btn-success btn-long" >
+            <i class="ib no-ng loading-icon loading-inverse" ng-show="isRequestMp" ></i>
+            <span ng-hide="isRequestMp" class="no-ng">绑定公众号</span>
+        </button>
+
+        <button type="button"   class="btn btn-default btn-long" ng-click="cancel()">遇到问题?</button>
+
+    </div>
+</form>

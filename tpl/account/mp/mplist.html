@@ -1,0 +1,48 @@
+
+<section>
+
+    <!-- 顶部 -->
+    <div class="right-content-top">
+        <h2>公众账号</h2>
+    </div>
+
+    <!-- 内容 -->
+    <div class="right-content-wrap">
+       <div class="account-area">
+           <h3 class="title">公众号信息</h3>
+            <ul>
+                <li class="">
+                    <span class="left-text ib">公众号名称</span>
+                    <span class=" right-text ib">{{$root.user.nickName}}</span>
+                </li>
+                <li class="">
+                    <span class="left-text ib">类型</span>
+                    <span class="right-text">{{$root.user.service_type_info | serviceTypeInfo }}</span>
+                </li>
+                <li class="">
+                    <span class="left-text ib">认证信息</span>
+                    <span class="right-text ib">{{$root.user.verify_type_info | verifyTypeInfo }}认证</span>
+                </li>
+                <li class="">
+                    <span class="left-text ib">公众号原始ID</span>
+                    <span class="right-text ib">{{$root.user.userName}}</span>
+                </li>
+                <li class="">
+                    <span class="left-text ib">微官网地址</span>
+                    <span class="right-text ib">{{baseMicroUrl}}</span>
+                    <button class="ml20 btn btn-success btn-sm " ui-zeroclip  ng-disabled="isCopying"
+                            zeroclip-copied="copyComplete($event)"
+                            zeroclip-on-error="clipError($event)"
+                            zeroclip-model="baseMicroUrl" >复制</button>
+                </li>
+
+            </ul>
+       </div>
+
+
+    </div>
+
+
+
+
+</section>

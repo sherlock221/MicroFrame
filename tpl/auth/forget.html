@@ -1,0 +1,58 @@
+
+<div class="modal-content">
+
+    <div class="modal-forget-Header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close()">
+            <span aria-hidden="true" class="forget-close">&times;</span></button>
+        <h3 class="modal-title">找回密码</h3>
+
+    </div>
+
+            <div class="modal-body" style="padding:10px 45px 30px;">
+                <form name="forgetForm" class="form-signin mt15" novalidate>
+                    <div ng-if="step1" >
+
+                        <input type="number"    ng-model="data.phone"  class="form-control" placeholder="注册手机号" required/>
+
+                        <p style="color:#fff">123</p>
+
+                        <button   ng-disabled="forgetForm.$invalid || isSubmit"   class="btn btn-lg btn-block btn-org" ng-click="submit()">
+                            <span class="no-ng" ng-hide="isSubmit">发送验证码</span>
+                            <i class="ib no-ng loading-icon loading-inverse ng-hide" ng-show="isSubmit"></i>
+                        </button>
+                    </div>
+                    <div ng-if="step2" >
+
+                        <div class="input-group">
+
+                                    <input type="number" ng-model="data.smsCode" class="form-input-default"  placeholder="请输入验证码" required>
+                                   <span class="input-group-btn">
+                                      <button class="btn font-org "        ng-disabled="forgetForm.$invalid || isSubmit"    type="button" ng-click="sendCode()">
+                                          <i class="ib no-ng loading-icon loading-inverse" ng-show="isSendCode" ></i>
+                                          <span ng-hide="isSendCode" class="no-ng">{{timeMsg}}</span>
+                                      </button>
+                                   </span>
+
+                        </div>
+                        <p style="color:#fff">123</p>
+                        <button   ng-disabled="forgetForm.$invalid || isSubmit"   class="btn btn-lg btn-block btn-org" ng-click="checkCode()" style="background:#ffa92d;color:#fff;">
+                            <span class="no-ng" ng-hide="">重置密码</span>
+                            <!--<i class="ib no-ng loading-icon loading-inverse ng-hide" ng-show="isSubmit"></i>-->
+                        </button>
+                    </div>
+                    <div ng-if="step3">
+
+                        <input type="password"    ng-model="pwd.newPwd"  class="ib form-input-default pwd-default" placeholder="新密码" required/>
+                        <input type="password"    ng-model="pwd.confirm"  class="ib form-input-default pwd-default" placeholder="确认新密码" required/>
+
+                        <p style="color:#fff">123</p>
+                        <button ng-disabled="forgetForm.$invalid || isSubmit" class="btn btn-lg btn-block btn-org" ng-click="changePwd()" style="background:#ffa92d;color:#fff;">
+                            <span class="no-ng" ng-hide="isSubmit">确认修改</span>
+                            <i class="ib no-ng loading-icon loading-inverse ng-hide" ng-show="isSubmit"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+
+</div>

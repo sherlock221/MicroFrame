@@ -1,0 +1,32 @@
+<div class="container tb-box" >
+
+      <!-- 登录后 -->
+      <section class="tb-row" ng-hide="$root.isLoginPage">
+            <div class="tb-col tb-mt">
+                  <a href="javascript:void(0)" class="ib logo"> </a>
+            </div>
+            <div  ng-if="$root.user" class="tb-col tb-mt text-right" style="color: gray;">
+                  <span class="">{{$root.user.emapName}}</span>
+                  <a href="javascript:void(0);" ng-click="$root.logoOut();" class="">退出</a>
+            </div>
+      </section>
+
+
+      <!-- 登录前 -->
+      <section class="tb-row" ng-show="$root.isLoginPage">
+            <div class="tb-col tb-mt">
+                  <!--<a href="javascript:void(0)" class="ib logo"> </a>-->
+                  <a href="javascript:void(0)" class="ib loginLogo"> </a>
+
+            </div>
+            <div class="tb-col tb-mt text-right" style="color: gray;">
+                  <span class="font-login-white">第一次使用？</span>
+                  <a href="#app/auth/register" class="og-a">立即注册</a>
+                  <a href="http://v.youku.com/v_show/id_XMTMxMjYxMjAzMg==.html" class="og-a" target="_blank"> &nbsp&nbsp;使用帮助</a>
+            </div>
+      </section>
+
+
+
+      </div>
+</div>

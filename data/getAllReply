@@ -1,0 +1,26 @@
+{
+    "bizData": [
+        {
+            "ruleName": "1111",
+            "id": "key-001"
+        },
+        {
+            "ruleName": "2222",
+            "id": "key-002"
+        },
+        {
+            "ruleName": "333",
+            "id": "key-003"
+        },
+        {
+            "ruleName": "444",
+            "id": "key-004"
+        },
+        {
+            "ruleName": "555",
+            "id": "key-005"
+        }
+    ],
+    "rtnCode": "0000000",
+    "msg": ""
+}

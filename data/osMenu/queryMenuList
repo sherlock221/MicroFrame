@@ -1,0 +1,106 @@
+{
+  "bizData": [
+    {
+      "id"     : 1,
+      "userId" : 11,
+      "parentId" :2,
+      "templateType" : 3,
+      "menuName"  : "园所概括",
+      "menuUrl"  : "#/app/s1/list/text",
+      "iconType" : 1,
+      "iconName" : "icon-house",
+      "iconColor" : "#90c124",
+      "iconUrl" : ""
+    },
+    {
+      "id"     : 2,
+      "userId" : 12,
+      "parentId" :2,
+      "templateType" : 3,
+      "menuName"  : "卫生保健",
+      "menuUrl"  : "#/app/s1/list/text",
+      "iconType" : 1,
+      "iconName" : "icon-treatment",
+      "iconColor" : "#ff4600",
+      "iconUrl" : ""
+    },
+    {
+      "id"     : 3,
+      "userId" : 13,
+      "parentId" :2,
+      "templateType" : 4,
+      "menuName"  : "教师风采",
+      "menuUrl"  : "#/app/s1/list/card",
+      "iconType" : 1,
+      "iconName" : "icon-teacher",
+      "iconColor" : "#f67900",
+      "iconUrl" : ""
+    },
+    {
+      "id"     : 4,
+      "userId" : 14,
+      "parentId" :2,
+      "templateType" : 2,
+      "menuName"  : "特色课程",
+      "menuUrl"  : "#/app/s1/list/image",
+      "iconType" : 1,
+      "iconName" : "icon-letter",
+      "iconColor" : "#ffcd2d",
+      "iconUrl" : ""
+    },
+    {
+      "id"     : 5,
+      "userId" : 14,
+      "parentId" :2,
+      "templateType" : 3,
+      "menuName"  : "亲子乐园",
+      "menuUrl"  : "#/app/s1/list/text",
+      "iconType" : 1,
+      "iconName" : "icon-puzzle",
+      "iconColor" : "#ffcd2d",
+      "iconUrl" : ""
+    },
+    {
+          "id"     : 6,
+          "userId" : 14,
+          "parentId" :2,
+          "templateType" : 3,
+          "menuName"  : "班级信息",
+          "menuUrl"  : "#/app/s1/list/text",
+          "iconType" : 1,
+          "iconName" : "icon-share",
+          "iconColor" : "#cf2cb2",
+          "iconUrl" : ""
+        },
+    {
+      "id"     : 7,
+      "userId" : 14,
+      "parentId" :2,
+      "templateType" : 1,
+      "menuName"  : "入园指南",
+      "menuUrl"  : "#/app/s1/menu/icon",
+      "iconType" : 1,
+      "iconName" : "icon-compass",
+      "iconColor" : "#5fc124",
+      "iconUrl" : ""
+    },
+    {
+      "id"     : 7,
+      "userId" : 14,
+      "parentId" :2,
+      "templateType" : 5,
+      "menuName"  : "联系我们",
+      "menuUrl"  : "#/app/contact",
+      "iconType" : 1,
+      "iconName" : "icon-telbook",
+      "iconColor" : "#60a5f4",
+      "iconUrl" : ""
+    }
+
+  ],
+  "rtnCode": "000000",
+  "msg": ""
+}
+
+
+

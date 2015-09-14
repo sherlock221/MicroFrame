@@ -1,0 +1,55 @@
+.registerContent{
+
+  .registerContentTop{
+
+    h4{
+      margin-top: 50px;
+      font-size: 30px;
+    }
+    margin-bottom: 60px;
+  }
+
+  .registerContentBottom{
+
+    padding-top: 25px;
+    padding-bottom: 20px;
+
+  }
+
+  .registerContentDesc{
+    margin-top: 25px;
+  }
+
+}
+
+
+
+
+
+.nav-reg{
+  h2{
+    width: 50%;
+    text-align: center;
+    line-height: 50px;
+
+    &.active{
+      background: $primary-color;
+      color: white;
+    }
+  }
+}
+
+.mp-block{
+  margin:  50px;
+  a{
+    border : 1px solid $border-light-gray;
+    width: 272px;
+    height: 272px;
+    text-align: center;
+    line-height: 19;
+    cursor: pointer;
+    &:hover{
+      background: #f4f5f9;
+    }
+  }
+}

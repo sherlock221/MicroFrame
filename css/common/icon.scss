@@ -1,0 +1,136 @@
+//图标
+
+.icon{
+  background-image: url("../imgs/icon/mp_icon.png");
+}
+
+$iconMpWidth : 16px;
+$iconMpHeight : 16px;
+
+.icon-opr-add{
+  width: $iconMpWidth;
+  height: $iconMpHeight;
+  background-position: 0 -4282px;
+}
+
+.icon-opr-menu{
+  width: $iconMpWidth;
+  height: $iconMpHeight;
+  background-position : 0 -4230px;
+
+}
+
+
+.icon-14-opr-add{
+  width: 14px;
+  height: 14px;
+  background-position : 0 -3447px;
+}
+.icon-14-opr-menu{
+  width: 14px;
+  height: 14px;
+  background-position : 0 -3591px;
+}
+
+
+
+.icon-menu{
+  background-image: url("../imgs/icon/mp_menu.png");
+  width: 114px;
+  height: 114px;
+}
+
+
+.icon-menu-addsub{
+  background-position:  0 0;
+  &:hover{
+    background-position: 0 -124px;
+  }
+
+}
+
+.icon-menu-message{
+  background-position:  0 -248px;
+  &:hover{
+    background-position: 0 -372px;
+  }
+
+}
+
+.icon-menu-url{
+  background-position:  0 -496px;
+  &:hover{
+    background-position: 0 -620px;
+  }
+}
+
+
+//首页部分图片
+.icon-fun{
+  background-image: url("../imgs/icon/icon_menu_function.png");
+  width: 18px;
+  height: 18px;
+}
+.icon-manager{
+  background-image: url("../imgs/icon/icon_menu_management.png");
+  width: 18px;
+  height: 18px;
+}
+
+
+.icon-18-edit{
+  width: 18px;
+  height: 18px;
+  background-position: 0 -5310px;
+
+  &:hover{
+   background-position: 0 -5338px;
+  }
+}
+
+.icon-18-save{
+  width: 18px;
+  height: 18px;
+  background-position: 0 -4333px;
+
+  &:hover{
+    background-position: 0 -4359px;
+  }
+}
+
+.icon-18-delete{
+  width: 18px;
+  height: 18px;
+  background-position: 0 -4610px;
+
+  &:hover{
+    background-position: 0 -4638px;
+  }
+}
+
+
+.icon-36-add{
+  background-position: 0 -2839px;
+  width: 36px;
+  height: 36px;
+
+}
+
+.icon-phone-img{
+  background-position:  rem(-764) 0;
+  width: rem(36);
+  height: rem(36);
+}
+
+.icon-location-img{
+  background-position:  rem(-764) rem(-36);
+  width: rem(36);
+  height: rem(38);
+}
+
+.icon-lock{
+  background-position:  0 -438px;
+  width: 48px;
+  height: 48px;
+}
+

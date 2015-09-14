@@ -1,0 +1,583 @@
+//屏幕部分
+.micro-screen{
+
+  border: 1px solid $border-light-gray;
+  min-height: 500px;
+
+
+  .header-bar{
+    //padding: 15px 20px;
+    height: 52px;
+    line-height: 52px;
+    border-bottom: 1px solid $border-light-gray;
+    position: relative;
+
+    .back-btn{
+      position: absolute;
+      left: 15px;
+      top: 0px;
+    }
+  }
+
+  .micro-index-title{
+    font-size: 16px;
+    margin: 10px 10px 15px;
+    letter-spacing: 3.3px;
+  }
+
+
+  //按钮列表
+ .micro-button-list{
+    overflow: hidden;
+   clear: both;
+
+    li{
+      float: left;
+      width: 33.333%;
+      text-align: center;
+      margin-bottom: 14px;
+
+      &:hover{
+        opacity: 0.8;
+      }
+
+      a{
+        padding: 6px 7.5px;
+        border-radius: 8px;
+        margin-bottom: 7px;
+      }
+
+    }
+
+  }
+
+
+
+
+
+//头像列表
+.micro-card-list{
+  overflow: hidden;
+  clear: both;
+  margin-top: 15px;
+
+  .addText{
+     cursor: pointer;
+    @include transition(all 0.5s ease);
+    @include transform(rotateZ(0deg));
+
+    &:hover{
+      @include transform(rotateZ(90deg));
+
+    }
+
+
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: 1px dashed #b0b0b0;
+
+    line-height: 58px;
+    color: $font-light-color;
+    font-size: 14px;
+  }
+
+
+
+
+  .mask-layer{
+    border-radius: 100%;
+    width: 60px;
+    height: 60px;
+    overflow: hidden;
+
+    @include transition(all 0.5s ease 0s);
+    opacity: 0;
+    visibility: hidden;
+  }
+
+    li{
+        float: left;
+        width: 33.33%;
+        position: relative;
+        margin-bottom: 24px;
+
+      &:hover{
+        .mask-layer{
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+
+      &>div{
+        .teacher-head{
+          border-radius: 100%;
+          width: 60px;
+          height: 60px;
+        }
+
+        .tName{
+          cursor: pointer;
+          font-size: 14px;
+          margin-top: 5px;
+          &:hover{
+            text-decoration: underline;
+          }
+        }
+
+
+
+        .tJob{
+          font-size: 12px;
+          margin-top: 5px;
+          color: $font-light-color;
+        }
+
+      }
+    }
+}
+
+
+
+
+  //文本列表
+  .micro-panel-list{
+
+
+
+
+    .panel-item{
+      position: relative;
+      border:  1px solid $border-light-gray;
+      padding: rem(30);
+      background: #fff;
+
+      margin-bottom: rem(30);
+      cursor: pointer;
+      overflow: hidden;
+
+      height: 107px;
+
+
+      .mask-layer{
+        @include transition(all 0.5s ease 0s);
+        @include transform(translateY(107px));
+      }
+
+      .mask-top{
+        top: 10px;
+      }
+
+      &:hover{
+        .mask-layer{
+          @include transform(translateY(70px));
+
+        }
+      }
+
+      a{
+        display: block;
+        font-size: rem(28);
+        color: #747474;
+      }
+      .title{
+        h5{
+          font-size: rem(28);
+          font-weight: bold;
+          color: #22292c;
+        }
+
+      }
+
+      & > .panel-item-content{
+
+        line-height: rem(38);
+        letter-spacing: rem(2);
+        margin-bottom: rem(10);
+      }
+
+
+      &.panel-util{
+
+        .addText{
+          position: relative;
+          top: 21px;
+        }
+
+        .icon-36-add{
+          @include transition(all 0.5s ease 0s);
+          @include transform(rotate(0deg));
+
+          &:hover{
+              @include transform(rotate(90deg));
+          }
+        }
+
+
+
+
+        border:  1px dashed $border-light-gray !important;
+      }
+
+    }
+
+
+
+
+
+  }
+
+
+
+  .micro-content-wrap{
+    padding: 15px;
+    height: 448px;
+    overflow-y: scroll;
+  }
+  .index-screen{
+
+
+
+  }
+
+  .list-screen{
+
+  }
+
+  .card-screen{
+
+  }
+
+
+  .editorAppText{
+    width: 180px;
+    position: relative;
+    top: 9px;
+    left: 60px;
+  }
+
+  #editApp{
+    position: absolute;
+    right: 15px;
+    top: 0px;
+  }
+
+}
+
+
+//操作
+.micro-opera{
+
+
+
+}
+
+//背景色
+.micro-menu-color {
+
+}
+
+
+
+.micro-detail{
+  padding: rem(36);
+  img{
+
+  }
+}
+.detail-imgText{
+  background: #ffffff;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+
+  .title{
+    font-size: rem(44);
+    text-align: left;
+    color: #3d3d3d;
+    font-weight: bold;
+  }
+
+  hr{
+    border: 1px solid #dadada;
+    margin: rem(36) 0;
+  }
+
+  p{
+    line-height: rem(50);
+    letter-spacing: rem(2);
+    color: #6e6e6e;
+    font-size: rem(32);
+  }
+
+  .mt-img{
+    margin-top: rem(32);
+    margin-bottom: rem(32);
+  }
+  img{
+    text-align: center;
+    display: inline-block;
+  }
+}
+
+
+
+
+.contact-list{
+  padding: rem(36);
+
+  .contact-item{
+    padding: rem(25) 0 ;
+  }
+  .content{
+    font-size: rem(32);
+    margin-left: rem(26);
+  }
+}
+
+
+
+//micro
+.form-style-base{
+  position: relative;
+  .form-style-content{
+    padding: 20px;
+    border : 1px solid $bg-light-gray;
+    background: $bg-light-gray;
+    min-height: 500px;
+  }
+
+  .arrow-in-light{
+    top: 44px;
+    left: -11px;
+    position: absolute;
+
+  }
+
+  .arrow-out-light{
+    top: 44px;
+    left: -12px;
+    position: absolute;
+  }
+
+  .form-style-item{
+
+    padding-bottom: 10px;
+
+
+    .form-style-label{
+      display: block;
+      width: auto;
+      float: none;
+      margin-right: 0;
+      margin-bottom: 4px;
+
+      .title{
+        font-weight: 400;
+        font-style: normal;
+        float: left;
+      }
+      .tips{
+        color: #8d8d8d;
+        font-weight: normal;
+        float: left;
+        margin: 0;
+        height: auto;
+      }
+    }
+  }
+}
+
+
+
+.arrow-in-light{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-width: 12px;
+  border-style: dashed;
+  border-color: transparent;
+  border-left-width: 0;
+  border-right-color: #f4f5f9;
+  border-right-style: solid;
+
+}
+.arrow-out-light{
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-width: 12px;
+  border-style: dashed;
+  border-color: transparent;
+  border-left-width: 0;
+  border-right-color: #e7e7eb;
+  border-right-style: solid;
+
+}
+
+
+.addMenuBtn{
+  position: absolute;
+  top: 50%;
+  margin-top: -10px;
+  left: 50%;
+  margin-left: -36px;
+}
+
+
+
+//micro
+.micro-load{
+  width: 100px;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  $temp : -50%,-50%;
+  @include transform(translate($temp));
+
+
+}
+
+.micro-list-title{
+  width: 68%;
+  float: left;
+}
+
+.micro-list-option{
+  padding-left: 10px;
+  position: relative;
+  top: 2px;
+}
+
+
+
+.micro-loading-bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.6);
+  &.bg-load{
+    z-index: 3;
+  }
+}
+
+
+.micro-ip{
+  .micro-content{
+    position: absolute;
+    left: 41px;
+    right: 0;
+    bottom: 0;
+    top: 86px;
+    background: #fff;
+    width: 76%;
+    height: 71%;
+  }
+
+
+}
+.micro-left{
+  vertical-align: top;
+  width: 30%;
+  .iphone-bg{
+    margin-right: 25px;
+  }
+}
+.micro-right{
+  vertical-align: top;
+  position: relative;
+  top: 13px;
+}
+.micro-middle{
+  width: 43%;
+  vertical-align: top;
+  position: relative;
+  top : 13px
+}
+
+.micro-menu-item{
+  margin-bottom: 15px;
+  .micro-menu-pd{
+    padding: 15px;
+  }
+}
+
+.micro-menu-by{
+  margin-left: 30px;
+
+
+  .micro-menu-header{
+    font-weight: normal;
+    margin: 0;
+    padding: 10px 10px;
+    font-size: 14px;
+    background: $bg-light-gray;
+    border : 1px solid $border-light-gray;
+    border-bottom: 0;
+  }
+
+
+  .micro-menu-list{
+    li{
+
+      a{
+        display: block;
+
+
+        //padding: 10px 10px;
+        padding: 5px 10px;
+        border : 1px solid $border-light-gray;
+        border-bottom: 0 none;
+
+        &:hover{
+          background: $bg-light-gray;
+        }
+        &.active{
+          background: $primary-color;
+          color: #fff;
+        }
+      }
+
+
+
+
+
+      &:last-child a{
+        border-bottom : 1px solid $border-light-gray;
+
+      }
+
+
+
+    }
+  }
+
+}
+
+//head
+.micro-card-header{
+  position: relative;
+  overflow: hidden;
+
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+
+}
+
+
+.detail-card-info{
+  overflow: hidden;
+  .jobType{
+    font-size: 12px;
+    color: #8d8d8d;
+  }
+
+  .titleName{
+
+  }
+}

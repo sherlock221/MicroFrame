@@ -1,0 +1,35 @@
+
+<section>
+
+    <!-- 顶部 -->
+    <div class="right-content-top">
+        <h2>账号信息</h2>
+    </div>
+
+    <!-- 内容 -->
+    <div class="right-content-wrap">
+        <div class="account-area">
+            <!--<h3 class="title">注册信息</h3>-->
+            <ul>
+                <li class="">
+                    <span class="left-text ib">注册手机号</span>
+                    <span class=" right-text ib">{{$root.user.phoneNum}}</span>
+                </li>
+                <li class="">
+                    <span class="left-text ib">微官网名称</span>
+                    <span class=" right-text ib">{{$root.user.emapName}}</span>
+                    <span class="right-text ib changePwd" style="margin-left: 20px"><a ui-sref="app.fun.changeUsername">修改微官网名称</a></span>
+                </li>
+                <li class="">
+                    <span class="left-text ib">密码</span>
+                    <span class="right-text ib changePwd" id="changepwd"><a ui-sref="app.fun.changepwd">修改密码</a></span>
+                    <!--<span>（一个月内只能申请修改一次）</span>-->
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+
+
+</section>
