@@ -15,7 +15,6 @@ MPreschool.controller("MainCtrl",function($rootScope,$scope,$modal,SERVER,$locat
 
 
 
-
     //错误判断
     $rootScope.$watch("error",function(newData){
         if(newData && newData == 401){
@@ -165,7 +164,6 @@ MPreschool.controller("MainCtrl",function($rootScope,$scope,$modal,SERVER,$locat
     $rootScope.$on('$stateChangeStart',
         function(event, toState, toParams, fromState, fromParams){
 
-
         })
 
 
@@ -173,6 +171,47 @@ MPreschool.controller("MainCtrl",function($rootScope,$scope,$modal,SERVER,$locat
     $scope.addSubMenu = function(){
         
     }
+
+
+    $rootScope.getUrlParams = function(){
+        var paramsUrl;
+        if ($location.$$absUrl.indexOf("#") == -1) {
+            paramsUrl = $location.$$absUrl.substring($location.$$absUrl.indexOf("?") + 1, $location.$$absUrl.length);
+
+        }
+        else {
+            paramsUrl = $location.$$absUrl.substring($location.$$absUrl.indexOf("?") + 1, $location.$$absUrl.indexOf("#"));
+        }
+
+        return Util.parseParams(paramsUrl);
+    }
+
+    //获得token
+    var  paramList = $rootScope.currentUrlParams = $rootScope.getUrlParams();
+
+    //获得url参数
+    var schoolCode = Util.getParam("schoolCode",paramList);
+    var access_token =  Util.getParam("access_token",paramList);
+
+
+
+    if(!schoolCode)
+        $rootScope.toastError("schoolCode 不存在!");
+    else
+        Util.setLg("schoolCode",schoolCode);
+
+
+    if(!access_token)
+        $rootScope.toastError("access_token 不存在!");
+    else{
+        Util.setLg("access_token",access_token);
+
+    }
+
+
+
+    console.log(schoolCode,access_token);
+
 
 
 });

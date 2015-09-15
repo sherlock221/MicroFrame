@@ -94,21 +94,23 @@ MPreschool.constant("SERVER", {
     testUrl : {
 
         //微官网操作后台
-        mp  : "http://172.16.130.73:8084/official",
+        mp  : "http://172.16.170.69:8084/official",
         //文件上传
-        file : "http://10.10.68.11:8808/file/",
-        editor : "http://10.10.68.11:3001/cmw"
+        file : "http://10.10.68.11:10000/file",
+        editor : "http://10.10.68.11:3001/cmw",
+        cookieDomain : "http://172.16.170.69:8084/official"
 
     },
 
-
     //预发布
     formalUrl : {
-        mp  : "http://official.weixiao100.cn",
+        mp  : "http://admin.weixiao100.cn",
 
         //文件上传
-        file : "http://10.10.68.11:8808/file/",
+        file : "http://10.10.68.11:10000/file",
         editor : "http://10.10.68.11:3001/cmw",
+
+        cookieDomain : "http://admin.weixiao100.cn",
 
         //微官网地址
         micro : "http://official.weixiao100.cn"
@@ -124,7 +126,6 @@ MPreschool.config(function($httpProvider){
 //配置loading 加载
 MPreschool.config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
     cfpLoadingBarProvider.includeSpinner = true;
-
 
 }])
 

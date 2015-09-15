@@ -28,9 +28,13 @@
                         </span>
 
 
+
+
+
                     </div>
 
                     <div class="micro-content-wrap">
+
 
                         <!--按钮视图 -->
                         <div class="index-screen" ng-show="currentNavView == 'index' ">
@@ -75,7 +79,7 @@
             <div class="col-md-8">
 
 
-                <section   class="form-style-base"  ng-if="editorItem">
+                <section   class="form-style-base"  ng-if="editorItem ">
                     <form novalidate name="microForm" >
 
                         <div class="form-style-content"  >
@@ -85,6 +89,10 @@
                             <div class="micro-loading-bg bg-load no-ng" ng-show="searchSubmit">
                                 <img src="imgs/micro.gif" class="response-img micro-load " >
                             </div>
+
+
+                            <!-- banner -->
+                            <div class="clearFix"  ng-if="editorItem.isBanner" ng-include="'tpl/function/micro/editor/banner_editor.html'">   </div>
 
 
                             <!-- 文本列表 || 图文详情 -->
@@ -106,10 +114,18 @@
                                 <!--<span  class="no-ng" >预览</span>-->
                             <!--</button>-->
 
-                            <button type="button"  ng-disabled="isSubmit" ng-click="submit();" class="btn btn-success btn-long">
+                            <button type="button"  ng-hide="editorItem.isBanner" ng-disabled="isSubmit" ng-click="submit();" class="btn btn-success btn-long">
                                 <span ng-hide="isSubmit" class="no-ng">{{editorItem.isAdd   ? "添加" : "保存并更新"}}</span>
                                 <i class="ib no-ng loading-icon loading-inverse" ng-show="isSubmit"></i>
                             </button>
+
+
+                            <button type="button"  ng-show="editorItem.isBanner"  ng-disabled="isSubmit" ng-click="submitBanner();" class="btn btn-success btn-long">
+                                <span ng-hide="isSubmit" class="no-ng">{{editorItem.isAdd   ? "添加banner" : "更新banner"}}</span>
+                                <i class="ib no-ng loading-icon loading-inverse" ng-show="isSubmit"></i>
+                            </button>
+
+
                         </div>
 
                         <i class="arrow arrow-out-light" style="margin-top: 0px;"></i>

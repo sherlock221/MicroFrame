@@ -1,5 +1,36 @@
-<h1 class="text-center micro-index-title">欢迎您入园</h1>
-<ul class="micro-button-list">
+
+
+<!-- banner -->
+<div class="banner-bg " ng-if="bannerList.length > 0">
+        <div class="banner-img-wrap" ng-repeat="banner in  bannerList">
+
+                <img  class="tile-img banner-img" ng-src="{{banner.imgUrl}}" />
+
+                <div class="mask-layer ">
+
+                        <div class="mask"></div>
+                        <div class="mask-top text-center" style="line-height: 60px;">
+                                <i class="pos-high ib icon icon-18-edit vm" ng-click="updateBannerLayer(banner);"></i>
+                                <i class="pos-high ib icon icon-18-delete vm"  mwl-confirm title="提示操作"  on-confirm="removeBannerLayer(banner)"   message="是否删除  这个banner?"  confirm-text="确定"    cancel-text="取消"></i>
+                        </div>
+
+                </div>
+
+        </div>
+</div>
+
+<div ng-if="bannerList.length <= 0">
+        <ul class="micro-panel-list">
+                <li class="panel-item panel-util">
+                        <a class="ib addText text-center" ng-click="addBannerLayer();">
+                                <i class="icon ib icon-36-add"></i>
+                        </a>
+                </li>
+        </ul>
+</div>
+
+
+<ul class="micro-button-list mt20">
         <li ng-repeat="menu in menuList" ng-if="menu.menuName !='首页' ">
                 <a href="javascript:void(0)" ng-click="searchSubObj(menu)"   ng-style={'backgroundColor':menu.iconColor}   class="ib ">
                         <i class="block micro-{{menu.iconName}} micro-icon"></i>

@@ -14,7 +14,22 @@ MPreschool
 
                         if(!config.headers['no-json-data']){
                             config.data.data = config.data.data || {};
-                            config.data.data.token  =  localStorage.getItem("token");
+
+
+                            //携带schoolCode
+                            var schoolCode = localStorage.getItem("schoolCode");
+                            var access_token = localStorage.getItem("access_token");
+
+                            if(access_token){
+                                config.url += config.url.indexOf("?")  == -1 ? "?access_token="+access_token : "&access_token="+access_token;
+                            }
+
+                            if(schoolCode){
+                                config.url += config.url.indexOf("?")  == -1 ? "?schoolCode="+schoolCode : "&schoolCode="+schoolCode;
+                            }
+
+
+
                         }
                         else{
                             delete  config.headers['no-json-data'];

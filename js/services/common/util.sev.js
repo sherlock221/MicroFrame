@@ -20,7 +20,48 @@ MPreschool
                 return reg.test(str);
             },
 
+            parseParams : function(paramsUrl){
 
+                var  paramsArray  = paramsUrl.split("&");
+                var  newParams = [];
+                for(var i =0; i<paramsArray.length;i++){
+                    var objs = paramsArray[i].split("=");
+                    var tt = '{"'+objs[0]+'": "'+objs[1]+'" }';
+                    var newObj = JSON.parse(tt);
+                    newParams.push(newObj);
+                }
+                return newParams;
+
+            },getParam : function(key,array){
+                for(var i =0; i<array.length;i++){
+                    var objs = array[i];
+                    if(objs[key]){
+                        return  objs[key];
+                    }
+                }
+                return "";
+            },
+            writeCookie : function(obj){
+                var script = document.createElement("script");
+                script.src = obj.url+"?access_token="+obj.value;
+                script.onerror = function(){
+                    console.log("error...");
+                }
+                $("body").append(script);
+            },
+             getParamByName : function (url,paras) {
+                var paraString = url.substring(url.indexOf("?")+1,url.length).split("&");
+                var paraObj = {}
+                for (i=0; j=paraString[i]; i++){
+                    paraObj[j.substring(0,j.indexOf("=")).toLowerCase()] = j.substring(j.indexOf("=")+1,j.length);
+                }
+                var returnValue = paraObj[paras.toLowerCase()];
+                if(typeof(returnValue)=="undefined"){
+                    return "";
+                }else{
+                    return returnValue;
+                }
+            },
             isEmptyObject: function (model) {
                 if (typeof model.rows === "object" && !(model.rows instanceof Array)) {
                     var hasProp = false;
@@ -86,7 +127,6 @@ MPreschool
             remove: function (key) {
                 $window.sessionStorage.removeItem(key);
             },
-
             getLgObj: function (key) {
 
                 var obj = $window.localStorage.getItem(key);
@@ -128,7 +168,6 @@ MPreschool
                 crear_a = setInterval(change_a, (3000 / a_num));
                 return crear_a;
             },
-
             isURL: function (str_url){
                 var strRegex = /http:\/\/ *?/;
                 //var re = new RegExp(strRegex);
@@ -140,8 +179,6 @@ MPreschool
                 //}
 
                 return str_url.match(strRegex);
-
-
             }
         };
         return Util;

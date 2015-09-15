@@ -23,6 +23,75 @@ MPreschool
                     });
                 return defer.promise;
             },
+            //查询banner
+            searchBanner : function(){
+                var data = {
+                    "style": "",
+                    "data": {},
+                    "clientInfo": {}
+                };
+                var defer = $q.defer();
+                $http.post(SERVER.url.mp+"/banner/queryBannerList",data)
+                    .success(function(result){
+                        defer.resolve(result);
+                    })
+                    .error(function(err){
+                        defer.reject(err);
+                    });
+                return defer.promise;
+            },
+
+
+            updateBanner : function(banner){
+                var data = {
+                    "style": "",
+                    "data": banner,
+                    "clientInfo": {}
+                };
+                var defer = $q.defer();
+                $http.post(SERVER.url.mp+"/banner/updateBanner",data)
+                    .success(function(result){
+                        defer.resolve(result);
+                    })
+                    .error(function(err){
+                        defer.reject(err);
+                    });
+                return defer.promise;
+            },
+
+            insertBanner : function(banner){
+                var data = {
+                    "style": "",
+                    "data": banner,
+                    "clientInfo": {}
+                };
+                var defer = $q.defer();
+                $http.post(SERVER.url.mp+"/banner/insertBanner",data)
+                    .success(function(result){
+                        defer.resolve(result);
+                    })
+                    .error(function(err){
+                        defer.reject(err);
+                    });
+                return defer.promise;
+            },
+
+            removeBanner : function(id){
+                var data = {
+                    "style": "",
+                    "data": {},
+                    "clientInfo": {}
+                };
+                var defer = $q.defer();
+                $http.post(SERVER.url.mp+"/banner/delBanner?id="+id,data)
+                    .success(function(result){
+                        defer.resolve(result);
+                    })
+                    .error(function(err){
+                        defer.reject(err);
+                    });
+                return defer.promise;
+            },
 
             //添加二级按钮
             addSubMenu : function(obj){
@@ -92,8 +161,10 @@ MPreschool
                     "data": {},
                     "clientInfo": {}
                 };
+
                 var defer = $q.defer();
-                $http.post(SERVER.url.mp+"/osMenu/queryMenuList?access_token=c5325c75-6c0a-4310-80d1-4f0b3ff8ba88",data)
+
+                $http.post(SERVER.url.mp+"/osMenu/queryMenuList",data)
                     .success(function(result){
                         defer.resolve(result);
                     })
@@ -108,12 +179,11 @@ MPreschool
                 var data = {
                     "style": "",
                     "data": {
-                        menuId : menuId
                     },
                     "clientInfo": {}
                 };
                 var defer = $q.defer();
-                $http.post(SERVER.url.mp+"/osMenu/querySubListByMenu",data
+                $http.post(SERVER.url.mp+"/osMenu/querySubListByMenu?menuId="+menuId,data
                 )
                 .success(function(result){
                     defer.resolve(result);

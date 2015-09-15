@@ -1,0 +1,12 @@
+<!-- 封面图片 -->
+<div class="form-style-item" >
+    <label class="form-style-label fix">
+        <strong class="title">banner图片</strong>
+        <p class="tips">（必填）</p>
+    </label>
+    <button type="button"   ngf-select   ngf-change="uploadPic($files,$event,'banner')" class="btn btn-default  btn-long">上传banner</button>
+    <p class="upload-img" ng-if="editorItem.imgUrl">
+        <img ng-src="{{editorItem.imgUrl}}"   />
+    </p>
+</div>
+
