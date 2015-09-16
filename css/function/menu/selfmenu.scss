@@ -9,9 +9,8 @@
   overflow: hidden;
 
   .mask-layer{
-    @include transition(all .8s ease 0s);
+    @include transition(all 0.3s ease 0s);
   }
-
 
   .banner-img-wrap{
     .mask-layer{
@@ -22,7 +21,6 @@
       .mask-layer{
         @include transform(translateY(107px));
       }
-
     }
   }
 

@@ -207,24 +207,26 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
     //上传图片
     $scope.uploadPic = function (files, $event, type) {
         var temp = files[0]
-        UploadSev.upload(temp).progress(function (evt) {
-            var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
-            console.log('progress: ' + progressPercentage + '% ');
-        }).success(function (data, status, headers, config) {
-            console.log("success..");
-            if (data.code == "200") {
-                if (type == 'banner') {
-                    $scope.editorItem.imgUrl = data.data.url;
+        if(temp){
+            UploadSev.upload(temp).progress(function (evt) {
+                var progressPercentage = parseInt(100.0 * evt.loaded / evt.total);
+                console.log('progress: ' + progressPercentage + '% ');
+            }).success(function (data, status, headers, config) {
+                console.log("success..");
+                if (data.code == "200") {
+                    if (type == 'banner') {
+                        $scope.editorItem.imgUrl = data.data.url;
+                    }
+                    else {
+                        $scope.editorItem.titleImgUrl = data.data.url;
+                        $scope.editorItem.photoImgUrl = data.data.url;
+                    }
                 }
                 else {
-                    $scope.editorItem.titleImgUrl = data.data.url;
-                    $scope.editorItem.photoImgUrl = data.data.url;
+                    $rootScope.toastError(data.code);
                 }
-            }
-            else {
-                $rootScope.toastError(data.code);
-            }
-        });
+            });
+        }
     }
 
 

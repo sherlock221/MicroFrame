@@ -10,7 +10,6 @@ MPreschool
                       "no-json-data" : "1"
                     },
                     data : {
-
                     }
                     //fileName: 'doc.jpg' or ['1.jpg', '2.jpg', ...] // to modify the name of the file(s)
                     //fileFormDataName: file // file formData name ('Content-Disposition'), server side request form name

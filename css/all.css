@@ -825,10 +825,10 @@ select:focus, input:focus {
   position: relative;
   overflow: hidden; }
   .banner-bg .mask-layer {
-    -webkit-transition: all 0.8s ease 0s;
-    transition: all 0.8s ease 0s;
-    -moz-transition: all 0.8s ease 0s;
-    -ms-transition: all 0.8s ease 0s; }
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+    -moz-transition: all 0.3s ease 0s;
+    -ms-transition: all 0.3s ease 0s; }
   .banner-bg .banner-img-wrap .mask-layer {
     -webkit-transform: translateY(160px);
     transform: translateY(160px);
@@ -1085,6 +1085,11 @@ select:focus, input:focus {
           transform: rotate(90deg);
           -moz-transform: rotate(90deg);
           -ms-transform: rotate(90deg); }
+  .micro-screen .menuIcons {
+    position: absolute;
+    z-index: 333;
+    left: 50%;
+    margin-left: -20px; }
   .micro-screen .micro-content-wrap {
     padding: 15px;
     overflow-y: scroll; }

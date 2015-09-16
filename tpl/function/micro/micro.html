@@ -95,14 +95,16 @@
                             <div class="clearFix"  ng-if="editorItem.isBanner" ng-include="'tpl/function/micro/editor/banner_editor.html'">   </div>
 
 
-                            <!-- 文本列表 || 图文详情 -->
-                            <div  class="clearFix"     ng-if="currentMenu.templateType == TEMPLATE_TYPE.DETAIL_INFO.CODE || currentMenu.templateType == TEMPLATE_TYPE.TXT_LIST.CODE  "  ng-include="'tpl/function/micro/editor/text_editor.html'" ></div>
+                            <div ng-if="!editorItem.isBanner">
+                                <!-- 文本列表 || 图文详情 -->
+                                <div  class="clearFix"     ng-if="currentMenu.templateType == TEMPLATE_TYPE.DETAIL_INFO.CODE || currentMenu.templateType == TEMPLATE_TYPE.TXT_LIST.CODE  "  ng-include="'tpl/function/micro/editor/text_editor.html'" ></div>
 
-                            <!-- card -->
-                            <div  class="clearFix"   ng-if="currentMenu.templateType == TEMPLATE_TYPE.CARD_LIST.CODE "    ng-include="'tpl/function/micro/editor/card_editor.html'" ></div>
+                                <!-- card -->
+                                <div  class="clearFix"   ng-if="currentMenu.templateType == TEMPLATE_TYPE.CARD_LIST.CODE "    ng-include="'tpl/function/micro/editor/card_editor.html'" ></div>
 
-                            <!-- concat -->
-                            <div class="clearFix" ng-if="currentMenu.templateType == TEMPLATE_TYPE.CONTACT_INFO.CODE "   ng-include="'tpl/function/micro/editor/concat_editor.html'"></div>
+                                <!-- concat -->
+                                <div class="clearFix" ng-if="currentMenu.templateType == TEMPLATE_TYPE.CONTACT_INFO.CODE "   ng-include="'tpl/function/micro/editor/concat_editor.html'"></div>
+                            </div>
 
 
 
