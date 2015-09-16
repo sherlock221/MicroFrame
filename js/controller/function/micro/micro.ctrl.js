@@ -1,5 +1,5 @@
 var temp;
-MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Util, MicroSev, SERVER, TEMPLATE_TYPE, UploadSev, VERSION) {
+MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Util, MicroSev, SERVER, TEMPLATE_TYPE, UploadSev, ICON_CONS,VERSION) {
 
     $rootScope.navActive = "micro";
 
@@ -34,9 +34,12 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
 
     //当前修改的item
     $scope.editorItem = "";
+
+
     //当前选择的按钮
     $scope.currentMenu = "";
 
+    $scope.iconNameObj = {};
 
     //标题超出
     $scope.isTitleOut = false;
@@ -47,6 +50,14 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
 
     $scope.TEMPLATE_TYPE = TEMPLATE_TYPE;
 
+    $scope.menuTemplateTypeList =  _.toArray(TEMPLATE_TYPE).filter(function(obj){
+        return  obj.CODE == TEMPLATE_TYPE.TXT_LIST.CODE ||  obj.CODE == TEMPLATE_TYPE.CARD_LIST.CODE ||  obj.CODE == TEMPLATE_TYPE.DETAIL_INFO.CODE ;
+    });
+
+
+    $scope.ICON_LIST =  ICON_CONS.ICON;
+
+    console.log($scope.menuTemplateTypeList);
 
     //是否第一个
     $scope.isFirstIndex = true;
@@ -293,28 +304,59 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
             return;
         }
 
-        //按钮下添加文章
-        $scope.editorItem.menuId = $scope.currentMenu.id;
-        $scope.editorItem.templateType = $scope.currentMenu.templateType;
+        //添加菜单
+        if($scope.editorItem.templateType){
+            MicroSev.addMenu($scope.editorItem).then(function (res) {
+                if (res.rtnCode == "0000000") {
+                    $rootScope.toastSuccess("菜单添加成功!");
+                    //清空item
+                    $scope.editorItem = "";
 
-        MicroSev.addAtricle($scope.editorItem).then(function (res) {
-            if (res.rtnCode == "0000000") {
-                $rootScope.toastSuccess("文章添加成功!");
-                //刷新
-                $scope.searchSubObj($scope.currentMenu);
-                //清空item
-                $scope.editorItem = "";
-            }
-            else {
-                $rootScope.toastError(res.msg);
-            }
+                    //刷新
+                    getMicroList();
+                }
+                else {
+                    $rootScope.toastError(res.msg);
+                }
+
+                $scope.isSubmit = false;
+
+            }, function () {
+                $scope.isSubmit = false;
+            });
 
 
-            $scope.isSubmit = false;
+        }
+        else{
+            //按钮下添加文章
+            $scope.editorItem.menuId = $scope.currentMenu.id;
+            $scope.editorItem.templateType = $scope.currentMenu.templateType;
 
-        }, function () {
-            $scope.isSubmit = false;
-        });
+            MicroSev.addAtricle($scope.editorItem).then(function (res) {
+                if (res.rtnCode == "0000000") {
+                    $rootScope.toastSuccess("文章添加成功!");
+                    //刷新
+                    $scope.searchSubObj($scope.currentMenu);
+                    //清空item
+                    $scope.editorItem = "";
+
+                }
+                else {
+                    $rootScope.toastError(res.msg);
+                }
+
+
+                $scope.isSubmit = false;
+
+            }, function () {
+                $scope.isSubmit = false;
+            });
+
+        }
+
+
+
+
     }
 
 
@@ -434,6 +476,38 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
             });
     }
 
+    $scope.onItemIconSelect = function($item){
+        $scope.editorItem.iconName =  $item.iconName;
+        console.log($scope.editorItem.iconName);
+    }
+
+    $scope.onItemColorSelect = function($item){
+        $scope.editorItem.iconColor =  $item.iconColor;
+        console.log($scope.editorItem.iconColor);
+    }
+
+    //删除menu
+    $scope.delMenu = function(menu){
+
+
+        MicroSev.removeMenu(menu.id)
+            .then(function (res) {
+                if (res.rtnCode == "0000000") {
+                    $rootScope.toastSuccess("删除成功!");
+                    //清空item
+                    $scope.editorItem = "";
+                    getMicroList();
+                }
+                else {
+                    $rootScope.toastError(res.msg);
+                }
+            });
+    }
+
+
+    $scope.stop = function($event){
+        $event.stopPropagation();
+    }
 
     getMicroList();
     searchBanner();

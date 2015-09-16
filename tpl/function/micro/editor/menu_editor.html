@@ -2,31 +2,91 @@
 
 <div class="form-style-item" >
         <label class="form-style-label fix">
-                <strong class="title">按钮icon</strong>
+                <strong class="title">图标</strong>
                 <p class="tips">（必填）</p>
         </label>
-        <button type="button"   ngf-select   ngf-change="uploadPic($files,$event,'info')" class="btn btn-default  btn-long">上传封面</button>
 
-        <p class="upload-img" >
-                <img ng-src="{{currentItem.titleImgUrl}}"   />
-        </p>
+        <ui-select  class=""   ng-model="iconNameObj" theme="selectize" on-select="onItemIconSelect($item)">
+                <ui-select-match placeholder="请选择一个图标" >
+                        <div>
+                                {{$select.selected.iconName}}
+                        </div>
+
+                </ui-select-match>
+                <ui-select-choices  class=""   repeat="icon in ICON_LIST | filter: $select.search">
+                        <div class="text-ellipsis" >
+                                <div class="ib micro-icon-ib">
+                                        <i class="ib micro-icon micro-{{icon.iconName}}" ></i>
+                                </div>
+                        </div>
+                </ui-select-choices>
+
+        </ui-select>
+
+</div>
+
+
+<div class="form-style-item" >
+
+        <label class="form-style-label fix">
+                <strong class="title">菜单背景</strong>
+                <p class="tips">（必填）</p>
+        </label>
+
+        <ui-select  class=""  ng-model="iconColorObj" theme="selectize"  on-select="onItemColorSelect($item)">
+                <ui-select-match placeholder="请选择一个背景色" >
+                        <div>
+                                {{$select.selected.iconColor}}
+                        </div>
+                </ui-select-match>
+
+                <ui-select-choices  class=""   repeat="icon in ICON_LIST | filter: $select.search">
+                        <div class="text-ellipsis" >
+                                <div class="ib micro-icon-ib" >
+                                        <div class="ib"  style="width: 40px;height: 40px;" ng-style="{'backgroundColor' : icon.iconColor}">
+                                                <i class="ib micro-icon micro-{{editorItem.iconName}}" ></i>
+                                        </div>
+
+                                </div>
+                        </div>
+                </ui-select-choices>
+
+        </ui-select>
+
 </div>
 
 <div class="form-style-item" >
 
         <label class="form-style-label fix">
-                <strong class="title">按钮标题</strong>
+                <strong class="title">菜单标题</strong>
                 <p class="tips">（必填）</p>
         </label>
-        <input-area content="editorItem.title" txt-length="10"   is-out="isTitleOut" ></input-area>
+        <input-area content="editorItem.menuName" txt-length="8" placeholder="菜单标题"   is-out="isTitleOut" required></input-area>
+
+</div>
+
+<div class="form-style-item" >
+
+        <label class="form-style-label fix">
+                <strong class="title">模板类型</strong>
+                <p class="tips">（必填）</p>
+        </label>
+
+
+
+        <select required  class="form-control"  ng-change="" ng-model="editorItem.templateType">
+                <option value="">请选择模板类型</option>
+                <option value="{{menuType.CODE}}" ng-repeat="menuType in  menuTemplateTypeList">{{menuType.NAME}}</option>
+        </select>
+
 </div>
 
 <!-- 内容 -->
-<div class="form-style-item">
-        <label class="form-style-label fix">
-                <strong class="title">内容</strong>
-                <p class="tips">（必填）</p>
-        </label>
+<!--<div class="form-style-item">-->
+        <!--<label class="form-style-label fix">-->
+                <!--<strong class="title">内容</strong>-->
+                <!--<p class="tips">（必填）</p>-->
+        <!--</label>-->
 
 
-</div>
+<!--</div>-->

@@ -37,8 +37,6 @@ MPreschool.controller("MainCtrl",function($rootScope,$scope,$modal,SERVER,$locat
     }
 
 
-
-
     //模板类型
     $rootScope.TEMPLATE_TYPE = TEMPLATE_TYPE;
 

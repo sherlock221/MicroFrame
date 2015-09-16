@@ -35,12 +35,16 @@
 
 <ul class="micro-button-list mt20">
         <li ng-repeat="menu in menuList" ng-if="menu.menuName !='首页' ">
-                <a href="javascript:void(0)" ng-click="searchSubObj(menu)"   ng-style={'backgroundColor':menu.iconColor}   class="ib ">
+                <a href="javascript:void(0)" ng-click="searchSubObj(menu)"   ng-style={'backgroundColor':menu.iconColor}   class="ib" style="position: relative;">
                         <i class="block micro-{{menu.iconName}} micro-icon"></i>
+
+                        <span class="ib close-btn"  ng-click="stop($event);"   mwl-confirm title="提示操作"  on-confirm="delMenu(menu,$event)"   message="是否删除 ({{menu.menuName}}) 这条记录?"  confirm-text="确定"    cancel-text="取消">x</span>
+
                 </a>
                 <div>
                         <span>{{menu.menuName}}</span>
                 </div>
+
 
         </li>
 

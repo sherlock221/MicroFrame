@@ -956,8 +956,18 @@ select:focus, input:focus {
     font-size: 16px;
     margin: 10px 10px 15px;
     letter-spacing: 3.3px; }
+  .micro-screen .close-btn {
+    position: absolute;
+    top: -11px;
+    z-index: 90;
+    color: white;
+    background: #fb6363;
+    font-size: 16px;
+    right: -7px;
+    padding: 0px 6px;
+    border-radius: 100%;
+    display: none; }
   .micro-screen .micro-button-list {
-    overflow: hidden;
     clear: both; }
     .micro-screen .micro-button-list li {
       float: left;
@@ -966,6 +976,8 @@ select:focus, input:focus {
       margin-bottom: 14px; }
       .micro-screen .micro-button-list li:hover {
         opacity: 0.8; }
+      .micro-screen .micro-button-list li:hover .close-btn {
+        display: inline-block; }
       .micro-screen .micro-button-list li a {
         padding: 6px 7.5px;
         border-radius: 8px;
@@ -1112,6 +1124,7 @@ select:focus, input:focus {
     margin-left: -20px; }
   .micro-screen .micro-content-wrap {
     padding: 15px;
+    max-height: 500px;
     overflow-y: scroll; }
   .micro-screen .editorAppText {
     width: 180px;
