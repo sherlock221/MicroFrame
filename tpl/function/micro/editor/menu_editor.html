@@ -1,6 +1,32 @@
-<div>
+<!-- 标题 -->
 
-        <button class="btn btn-success addMenuBtn" ng-click="addMicroMenu();">添加菜单</button>
+<div class="form-style-item" >
+        <label class="form-style-label fix">
+                <strong class="title">按钮icon</strong>
+                <p class="tips">（必填）</p>
+        </label>
+        <button type="button"   ngf-select   ngf-change="uploadPic($files,$event,'info')" class="btn btn-default  btn-long">上传封面</button>
+
+        <p class="upload-img" >
+                <img ng-src="{{currentItem.titleImgUrl}}"   />
+        </p>
 </div>
 
+<div class="form-style-item" >
 
+        <label class="form-style-label fix">
+                <strong class="title">按钮标题</strong>
+                <p class="tips">（必填）</p>
+        </label>
+        <input-area content="editorItem.title" txt-length="10"   is-out="isTitleOut" ></input-area>
+</div>
+
+<!-- 内容 -->
+<div class="form-style-item">
+        <label class="form-style-label fix">
+                <strong class="title">内容</strong>
+                <p class="tips">（必填）</p>
+        </label>
+
+
+</div>

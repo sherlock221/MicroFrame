@@ -78,7 +78,6 @@
 
             <div class="col-md-8">
 
-
                 <section   class="form-style-base"  ng-if="editorItem ">
                     <form novalidate name="microForm" >
 
@@ -102,10 +101,15 @@
                                 <!-- card -->
                                 <div  class="clearFix"   ng-if="currentMenu.templateType == TEMPLATE_TYPE.CARD_LIST.CODE "    ng-include="'tpl/function/micro/editor/card_editor.html'" ></div>
 
+                                <!-- menu -->
+                                <div  class="clearFix"   ng-if="currentMenu.templateType == TEMPLATE_TYPE.CARD_LIST.CODE "    ng-include="'tpl/function/micro/editor/card_editor.html'" ></div>
+
                                 <!-- concat -->
                                 <div class="clearFix" ng-if="currentMenu.templateType == TEMPLATE_TYPE.CONTACT_INFO.CODE "   ng-include="'tpl/function/micro/editor/concat_editor.html'"></div>
-                            </div>
 
+                                <!--menu -->
+                                <div class="clearFix" ng-if="currentMenu.templateType == TEMPLATE_TYPE.MENU_ICON.CODE "   ng-include="'tpl/function/micro/editor/menu_editor.html'"></div>
+                            </div>
 
 
 

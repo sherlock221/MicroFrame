@@ -114,6 +114,9 @@ MPreschool
             },
 
 
+
+
+
             //删除单项
             removeAtricle : function(menuId,id){
                 var data = {
@@ -126,25 +129,6 @@ MPreschool
                 };
                 var defer = $q.defer();
                 $http.post(SERVER.url.mp+"/article/delArticle",data)
-                    .success(function(result){
-                        defer.resolve(result);
-                    })
-                    .error(function(err){
-                        defer.reject(err);
-                    });
-                return defer.promise;
-            },
-
-            removeMenu : function(id){
-                var data = {
-                    "style": "",
-                    "data": {
-                        id : id
-                    },
-                    "clientInfo": {}
-                };
-                var defer = $q.defer();
-                $http.post(SERVER.url.mp+"/osMenu/deleteMenu",data)
                     .success(function(result){
                         defer.resolve(result);
                     })
@@ -219,11 +203,8 @@ MPreschool
                 return defer.promise;
             },
 
-
             changeUsername:function(emapName){
-
                 var defer= $q.defer();
-
                 var data = {
                     "style": "",
                     "data": {
@@ -241,9 +222,52 @@ MPreschool
                     });
 
                 return defer.promise;
+            },
 
+            //添加按钮
+            addMenu : function(obj){
+                var data = {
+                    "style": "",
+                    "data": {
+                        "parentId" : 0,
+                        "templateType" : obj.templateType,
+                        "menuName" : obj.menuName,
+                        "iconName" : obj.iconName,
+                        "iconColor" : obj.iconColor,
+                        "iconType"  : 1,
+                        "menuUrl"  : obj.menuUrl
+                    },
+                    "clientInfo": {}
+                };
+                var defer = $q.defer();
+                $http.post(SERVER.url.mp+"/osMenu/insertMenu",data)
+                    .success(function(result){
+                        defer.resolve(result);
+                    })
+                    .error(function(err){
+                        defer.reject(err);
+                    });
+                return defer.promise;
+            },
+            //删除按钮
+            removeMenu : function(menuId){
+                var data = {
+                    "style": "",
+                    "data": {
+                        menuId : menuId
+                    },
+                    "clientInfo": {}
+                };
+                var defer = $q.defer();
+                $http.post(SERVER.url.mp+"/osMenu/deleteMenu?menuId="+menuId,data)
+                    .success(function(result){
+                        defer.resolve(result);
+                    })
+                    .error(function(err){
+                        defer.reject(err);
+                    });
+                return defer.promise;
             }
-
 
         }
 

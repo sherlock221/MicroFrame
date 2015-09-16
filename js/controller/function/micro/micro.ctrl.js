@@ -73,6 +73,20 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
         };
     }
 
+    //添加按钮
+    $scope.addMenu  = function(){
+
+        $scope.currentMenu  = {
+            templateType : TEMPLATE_TYPE.MENU_ICON.CODE,
+            "parentId" : 0,
+            "iconType"  : 1
+        }
+
+        $scope.editorItem = {
+            "isAdd": true
+        };
+    }
+
     //查询子菜单
     $scope.searchSubObj = function (menu) {
         $scope.currentMenu = menu;

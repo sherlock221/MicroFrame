@@ -47,7 +47,35 @@
         margin-bottom: 7px;
       }
 
+
+      &.util{
+
+        .addText{
+          position: relative;
+          top: 0px;
+          border-radius: 100%;
+          padding: 6px;
+          border:  1px dashed $border-light-gray !important;
+        }
+
+        .icon-36-add{
+          @include transition(all 0.5s ease 0s);
+          @include transform(rotate(0deg));
+
+          &:hover{
+            @include transform(rotate(90deg));
+          }
+        }
+
+
+
+      }
+
     }
+
+
+
+
 
   }
 

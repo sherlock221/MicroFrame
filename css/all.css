@@ -970,6 +970,26 @@ select:focus, input:focus {
         padding: 6px 7.5px;
         border-radius: 8px;
         margin-bottom: 7px; }
+      .micro-screen .micro-button-list li.util .addText {
+        position: relative;
+        top: 0px;
+        border-radius: 100%;
+        padding: 6px;
+        border: 1px dashed #e7e7eb !important; }
+      .micro-screen .micro-button-list li.util .icon-36-add {
+        -webkit-transition: all 0.5s ease 0s;
+        transition: all 0.5s ease 0s;
+        -moz-transition: all 0.5s ease 0s;
+        -ms-transition: all 0.5s ease 0s;
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg); }
+        .micro-screen .micro-button-list li.util .icon-36-add:hover {
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+          -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg); }
   .micro-screen .micro-card-list {
     overflow: hidden;
     clear: both;
