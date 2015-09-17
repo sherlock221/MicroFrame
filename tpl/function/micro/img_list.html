@@ -1,0 +1,27 @@
+<ul class="micro-panel-list micro-img-list">
+    <li class="panel-item" ng-repeat="img in imgList">
+
+        <a href="javascript:void(0)"  class="">
+            <span class="text-num">{{img.title}}</span>
+           <img ng-src="{{img.titleImgUrl}}" class="" />
+        </a>
+
+
+        <div class="mask-layer ">
+            <div class="mask"></div>
+            <div class="mask-top text-center" >
+                <i class="ib icon icon-18-edit  mr10" ng-click="editor(img);"></i>
+                <i class="ib icon icon-18-delete "  mwl-confirm title="提示操作"  on-confirm="removeMicroItem(txt)"   message="是否删除 ({{txt.title}}) 这条记录?"  confirm-text="确定"    cancel-text="取消" ></i>
+            </div>
+        </div>
+
+    </li>
+
+
+    <li class="panel-item panel-util" >
+        <a class="ib addText text-center" ng-click="add();">
+            <i class="icon ib icon-36-add"></i>
+        </a>
+    </li>
+
+</ul>

@@ -50,9 +50,25 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
 
     $scope.TEMPLATE_TYPE = TEMPLATE_TYPE;
 
+
     $scope.menuTemplateTypeList =  _.toArray(TEMPLATE_TYPE).filter(function(obj){
-        return  obj.CODE == TEMPLATE_TYPE.TXT_LIST.CODE ||  obj.CODE == TEMPLATE_TYPE.CARD_LIST.CODE ||  obj.CODE == TEMPLATE_TYPE.DETAIL_INFO.CODE ;
+        return  obj.CODE == TEMPLATE_TYPE.TXT_LIST.CODE ||  obj.CODE == TEMPLATE_TYPE.CARD_LIST.CODE ||  obj.CODE == TEMPLATE_TYPE.DETAIL_INFO.CODE  || obj.CODE == TEMPLATE_TYPE.IMG_LIST.CODE ;
     });
+
+
+    var getTemplateByCode = function(code){
+
+        var array  =  _.toArray(TEMPLATE_TYPE);
+
+        for(var i=0;i<array.length;i++){
+            var obj = array[i];
+            if(obj.CODE == code){
+                return obj;
+            }
+        }
+
+        return null;
+    }
 
 
     $scope.ICON_LIST =  ICON_CONS.ICON;
@@ -118,6 +134,12 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
                 $scope.cardList = res.bizData;
                 $scope.toggleView(TEMPLATE_TYPE.CARD_LIST.TYPE);
             }
+            //图片
+            else if (TEMPLATE_TYPE.IMG_LIST.CODE == menu.templateType) {
+                $scope.imgList = res.bizData;
+                $scope.toggleView(TEMPLATE_TYPE.IMG_LIST.TYPE);
+            }
+
             //详情
             else if (TEMPLATE_TYPE.DETAIL_INFO.CODE == menu.templateType) {
                 $scope.detailInfo = res.bizData;
@@ -306,6 +328,11 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
 
         //添加菜单
         if($scope.editorItem.templateType){
+
+            var tempType  =  getTemplateByCode($scope.editorItem.templateType);
+            console.log(tempType.menuUrl);
+            $scope.editorItem.menuUrl = tempType.URL;
+
             MicroSev.addMenu($scope.editorItem).then(function (res) {
                 if (res.rtnCode == "0000000") {
                     $rootScope.toastSuccess("菜单添加成功!");
@@ -409,7 +436,9 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
             return;
         }
 
-        MicroSev.updateArticle($scope.editorItem).then(function (res) {
+
+
+        MicroSev.updateArticle($scope.currentMenu,$scope.editorItem).then(function (res) {
             if (res.rtnCode == "0000000") {
 
                 $rootScope.toastSuccess("修改成功");
@@ -505,12 +534,27 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
     }
 
 
+    var searchSchoolInfo = function(){
+        MicroSev.searchSchoolName()
+            .then(function (res) {
+                if (res.rtnCode == "0000000") {
+                    $rootScope.schoolInfoObj = res.bizData;
+                }
+                else {
+                    $rootScope.toastError(res.msg);
+                }
+            });
+    }
+
     $scope.stop = function($event){
         $event.stopPropagation();
     }
 
     getMicroList();
     searchBanner();
+
+    //查询学校信息
+    searchSchoolInfo();
 
 
 });

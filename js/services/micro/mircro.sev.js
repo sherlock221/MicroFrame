@@ -14,6 +14,7 @@ MPreschool
                     "clientInfo": {}
                 };
 
+
                 var url;
                 var defer = $q.defer();
                 if(obj.templateType == TEMPLATE_TYPE.CARD_LIST.CODE){
@@ -120,8 +121,44 @@ MPreschool
                     });
                 return defer.promise;
 
+            },
+
+            addSubMenu : function(obj){
+                var data = {
+                    "style": "",
+                    "data": obj,
+                    "clientInfo": {}
+                };
+                var defer = $q.defer();
+                $http.post(SERVER.url.mp+"/osMenu/insertOrUpdateMenu",data)
+                    .success(function(result){
+                        defer.resolve(result);
+                    })
+                    .error(function(err){
+                        defer.reject(err);
+                    });
+                return defer.promise;
 
             },
+
+            searchSchoolName : function(){
+                var data = {
+                    "style": "",
+                    "data": {},
+                    "clientInfo": {}
+                };
+                var defer = $q.defer();
+                $http.post(SERVER.url.mp+"/public/osMenu/getSchoolName",data)
+                    .success(function(result){
+                        defer.resolve(result);
+                    })
+                    .error(function(err){
+                        defer.reject(err);
+                    });
+                return defer.promise;
+
+            },
+
 
             //删除单项
             removeAtricle : function(menuId,id){
@@ -186,14 +223,21 @@ MPreschool
             },
 
             //更新文章
-            updateArticle : function(sub){
+            updateArticle : function(menu,sub){
                 var data = {
                     "style": "",
                     "data": sub,
                     "clientInfo": {}
                 };
                 var defer = $q.defer();
-                $http.post(SERVER.url.mp+"/article/updateArticle",data
+                var url;
+                if(menu.templateType == TEMPLATE_TYPE.CARD_LIST.CODE){
+                    url = SERVER.url.mp+"/article/updateTeacher";
+                }
+                else{
+                    url = SERVER.url.mp+"/article/updateArticle";
+                }
+                $http.post(url,data
                 )
                     .success(function(result){
                         defer.resolve(result);

@@ -1,0 +1,30 @@
+
+<!-- 封面图片 -->
+<div class="form-style-item" >
+    <label class="form-style-label fix">
+        <strong class="title">封面图片</strong>
+        <p class="tips">（必填）</p>
+    </label>
+    <button type="button"   ngf-select   ngf-change="uploadPic($files,$event,'info')" class="btn btn-default  btn-long">上传封面</button>
+
+    <p class="upload-img" >
+
+        <img ng-src="{{editorItem.titleImgUrl}}"   />
+
+    </p>
+
+</div>
+
+
+
+
+<!-- 标题 -->
+<div class="form-style-item" >
+    <label class="form-style-label fix">
+        <strong class="title">标题</strong>
+        <p class="tips">（必填）</p>
+    </label>
+    <input-area content="editorItem.title" txt-length="30"   is-out="isTitleOut" ></input-area>
+
+</div>
+

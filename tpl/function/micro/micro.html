@@ -7,7 +7,7 @@
     <!-- 内容 -->
 
     <div ng-if="$root.verifyType != -1 " class="right-content-wrap tb-box" style="width: 100%;">
-        <p class="msg_tips">微官网链接地址位于左侧“公众账号”内</p>
+        <!--<p class="msg_tips">微官网链接地址位于左侧“公众账号”内</p>-->
         <div class="row">
             <div class="col-md-4">
                 <div class="micro-screen">
@@ -15,18 +15,17 @@
                         <a class="ib back-btn" href="javascript:void(0);" ng-click="goBack();" ng-hide="currentNavViewStrack.length == 1 " >返回</a>
 
                         <span class="ib text-ellipsis" style="width: 180px;" ng-hide="editorApp"  ng-if="isFirstIndex">
-                            {{$root.user.emapName}}
+                            {{$root.schoolInfoObj}}
                         </span>
                         <input   type="text"  ng-model="$root.user.emapName"  placeholder="输入您的幼儿园名称" ng-if="editorApp" class=" editorAppText form-input-default" required  />
-                        <a class="ib editor" id="editApp" ng-if="isFirstIndex">
-                            <i class="ib icon-18-edit icon" ng-hide="editorApp" ng-click="toggleEditor(true)"></i>
-                            <i class="ib icon-18-save icon" ng-if="editorApp"  ng-click="toggleEditor(false)"></i>
-                        </a>
+                        <!--<a class="ib editor" id="editApp" ng-if="isFirstIndex">-->
+                            <!--<i class="ib icon-18-edit icon" ng-hide="editorApp" ng-click="toggleEditor(true)"></i>-->
+                            <!--<i class="ib icon-18-save icon" ng-if="editorApp"  ng-click="toggleEditor(false)"></i>-->
+                        <!--</a>-->
 
                         <span ng-if="currentMenu.menuName !='首页' && !isFirstIndex  ">
                             {{currentMenu.menuName}}
                         </span>
-
 
 
 
@@ -51,6 +50,11 @@
                             <div  ng-include="'tpl/function/micro/card.html'" ></div>
                         </div>
 
+                        <!--图片列表-->
+                        <div class="list-screen" ng-show="currentNavView == 'img_list' ">
+                            <div  ng-include="'tpl/function/micro/img_list.html'" ></div>
+                        </div>
+
                         <!--联系我们 -->
                         <div class="list-screen" ng-show="currentNavView == 'concat' ">
                             <div  ng-include="'tpl/function/micro/contact.html'" ></div>
@@ -65,6 +69,7 @@
                         <div class="list-screen" ng-show="currentNavView == 'card_detail' ">
                             <div  ng-include="'tpl/function/micro/detail_card.html'" ></div>
                         </div>
+
 
 
                     </div>
@@ -101,6 +106,8 @@
                                 <!-- card -->
                                 <div  class="clearFix"   ng-if="currentMenu.templateType == TEMPLATE_TYPE.CARD_LIST.CODE "    ng-include="'tpl/function/micro/editor/card_editor.html'" ></div>
 
+                                <!-- 纯图列表 -->
+                                <div  class="clearFix"   ng-if="currentMenu.templateType == TEMPLATE_TYPE.IMG_LIST.CODE "    ng-include="'tpl/function/micro/editor/img_list_editor.html'" ></div>
 
                                 <!-- concat -->
                                 <div class="clearFix" ng-if="currentMenu.templateType == TEMPLATE_TYPE.CONTACT_INFO.CODE "   ng-include="'tpl/function/micro/editor/concat_editor.html'"></div>

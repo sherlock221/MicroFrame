@@ -489,6 +489,16 @@ select:focus, input:focus {
   height: 100%;
   z-index: 1000; }
 
+.mask-right {
+  position: absolute;
+  top: 50%;
+  z-index: 1000;
+  left: 25px;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%); }
+
 .loading-icon {
   width: 14px;
   height: 14px;
@@ -543,6 +553,12 @@ select:focus, input:focus {
 .pos-high {
   position: relative;
   z-index: 30; }
+
+.ovh {
+  overflow: hidden; }
+
+.ml15 {
+  margin-left: 15px; }
 
 .micro-icon {
   background-image: url("../imgs/micro-icon.png");
@@ -1005,7 +1021,7 @@ select:focus, input:focus {
   .micro-screen .micro-card-list {
     overflow: hidden;
     clear: both;
-    margin-top: 15px; }
+    margin-top: 10px; }
     .micro-screen .micro-card-list .addText {
       cursor: pointer;
       -webkit-transition: all 0.5s ease;
@@ -1029,24 +1045,30 @@ select:focus, input:focus {
         -moz-transform: rotateZ(90deg);
         -ms-transform: rotateZ(90deg); }
     .micro-screen .micro-card-list .mask-layer {
-      border-radius: 100%;
-      width: 60px;
-      height: 60px;
       overflow: hidden;
       -webkit-transition: all 0.5s ease 0s;
       transition: all 0.5s ease 0s;
       -moz-transition: all 0.5s ease 0s;
       -ms-transition: all 0.5s ease 0s;
-      opacity: 0;
-      visibility: hidden; }
+      -webkit-transform: translateX(100%);
+      transform: translateX(100%);
+      -moz-transform: translateX(100%);
+      -ms-transform: translateX(100%); }
     .micro-screen .micro-card-list li {
-      float: left;
-      width: 33.33%;
+      width: 100%;
       position: relative;
-      margin-bottom: 24px; }
+      padding-bottom: 15px;
+      padding-top: 15px;
+      border-bottom: 1px solid #e7e7eb;
+      overflow: hidden;
+      min-height: 95px; }
+      .micro-screen .micro-card-list li:first-child {
+        padding-top: 0; }
       .micro-screen .micro-card-list li:hover .mask-layer {
-        opacity: 1;
-        visibility: visible; }
+        -webkit-transform: translateX(80%);
+        transform: translateX(80%);
+        -moz-transform: translateX(80%);
+        -ms-transform: translateX(80%); }
       .micro-screen .micro-card-list li > div .teacher-head {
         border-radius: 100%;
         width: 60px;
@@ -1117,6 +1139,12 @@ select:focus, input:focus {
           transform: rotate(90deg);
           -moz-transform: rotate(90deg);
           -ms-transform: rotate(90deg); }
+  .micro-screen .micro-img-list li {
+    padding: 0 !important; }
+  .micro-screen .micro-img-list .text-num {
+    position: absolute;
+    left: 6px;
+    top: 5px; }
   .micro-screen .menuIcons {
     position: absolute;
     z-index: 333;

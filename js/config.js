@@ -42,7 +42,7 @@ MPreschool.constant("TEMPLATE_TYPE",{
         CODE : 2,
         URL: "#/app/s1/list/image",
         NAME : "图片列表",
-        TYPE : "list"
+        TYPE : "img_list"
     },
     "MENU_ICON" : {
         CODE : 1,
@@ -98,7 +98,8 @@ MPreschool.constant("SERVER", {
         //文件上传
         file : "http://10.10.68.11:10000/file",
         editor : "http://imzhiliao.com:3001/cmw",
-        cookieDomain : "http://172.16.170.69:8084/official"
+        cookieDomain : "http://172.16.170.69:8084/official",
+        wp : "http://172.16.170.194:7160/MicroFrame/index.html?schoolCode=10001"
     },
 
     //预发布

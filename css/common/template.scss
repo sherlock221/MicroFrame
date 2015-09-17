@@ -458,6 +458,14 @@ select,input{
   z-index: 1000;
 }
 
+.mask-right{
+  position: absolute;
+  top: 50%;
+  z-index: 1000;
+  left: 25px;
+  @include transform(translateY(-50%));
+}
+
 
 
 
@@ -546,4 +554,11 @@ select,input{
 .pos-high{
     position: relative;
   z-index: 30;
+}
+
+.ovh{
+  overflow: hidden;
+}
+.ml15{
+  margin-left: 15px;
 }

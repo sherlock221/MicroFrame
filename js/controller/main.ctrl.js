@@ -14,7 +14,6 @@ MPreschool.controller("MainCtrl",function($rootScope,$scope,$modal,SERVER,$locat
 
 
 
-
     //错误判断
     $rootScope.$watch("error",function(newData){
         if(newData && newData == 401){

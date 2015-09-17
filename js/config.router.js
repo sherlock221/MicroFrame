@@ -27,7 +27,7 @@ MPreschool.config(
               })
 
 
-          ////login
+          //login
           $urlRouterProvider.otherwise('/app/fun/micro');
 
 
