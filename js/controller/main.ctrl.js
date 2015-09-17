@@ -10,8 +10,7 @@
 MPreschool.controller("MainCtrl",function($rootScope,$scope,$modal,SERVER,$location,$state,Util,toastrConfig,toastr,TEMPLATE_TYPE,VERSION){
 
     //当前环境
-    SERVER.url  = SERVER.testUrl;
-
+    SERVER.url  = SERVER.formalUrl;
 
 
     //错误判断

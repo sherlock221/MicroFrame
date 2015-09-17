@@ -98,22 +98,18 @@ MPreschool.constant("SERVER", {
         //文件上传
         file : "http://10.10.68.11:10000/file",
         editor : "http://imzhiliao.com:3001/cmw",
-        cookieDomain : "http://172.16.170.69:8084/official",
-        wp : "http://172.16.170.194:7160/MicroFrame/index.html?schoolCode=10001"
+        cookieDomain : "http://172.16.170.69:8084/official"
     },
 
     //预发布
     formalUrl : {
-        mp  : "http://admin.weixiao100.cn",
-
+        //微官网操作后台
+        mp  : "http://official.weixiao100.cn:9000",
         //文件上传
-        file : "http://10.10.68.11:10000/file",
-        editor : "http://10.10.68.11:3001/cmw",
+        file : "http://imzhiliao.com:10000/file",
+        editor : "http://imzhiliao.com:3001/cmw",
 
-        cookieDomain : "http://admin.weixiao100.cn",
-
-        //微官网地址
-        micro : "http://official.weixiao100.cn"
+        cookieDomain : "http://official.weixiao100.cn"
     }
 });
 
