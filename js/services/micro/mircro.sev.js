@@ -2,7 +2,7 @@
  * @sherlock221b
  */
 MPreschool
-    .factory("MicroSev", function ($q,$http,SERVER) {
+    .factory("MicroSev", function ($q,$http,SERVER,TEMPLATE_TYPE) {
 
         var MicroSev = {
 
@@ -13,8 +13,18 @@ MPreschool
                     "data": obj,
                     "clientInfo": {}
                 };
+
+                var url;
                 var defer = $q.defer();
-                $http.post(SERVER.url.mp+"/article/insertArticle",data)
+                if(obj.templateType == TEMPLATE_TYPE.CARD_LIST.CODE){
+                    url = SERVER.url.mp+"/article/insertTeacher";
+                }
+                else{
+                    url = SERVER.url.mp+"/article/insertArticle";
+                }
+
+
+                $http.post(url,data)
                     .success(function(result){
                         defer.resolve(result);
                     })
@@ -113,10 +123,6 @@ MPreschool
 
             },
 
-
-
-
-
             //删除单项
             removeAtricle : function(menuId,id){
                 var data = {
@@ -128,7 +134,7 @@ MPreschool
                     "clientInfo": {}
                 };
                 var defer = $q.defer();
-                $http.post(SERVER.url.mp+"/article/delArticle",data)
+                $http.post(SERVER.url.mp+"/article/delArticle?id="+id+"&menuId="+menuId,data)
                     .success(function(result){
                         defer.resolve(result);
                     })
@@ -179,15 +185,11 @@ MPreschool
                 return defer.promise;
             },
 
-
-            //更新menu
+            //更新文章
             updateArticle : function(sub){
                 var data = {
                     "style": "",
-                    "data": {
-                        menuId : sub.menuId,
-                        infoData : sub
-                    },
+                    "data": sub,
                     "clientInfo": {}
                 };
                 var defer = $q.defer();

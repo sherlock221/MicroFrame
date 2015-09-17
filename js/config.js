@@ -94,12 +94,11 @@ MPreschool.constant("SERVER", {
     testUrl : {
 
         //微官网操作后台
-        mp  : "http://172.16.130.126:8084/official",
+        mp  : "http://172.16.170.69:8084/official",
         //文件上传
         file : "http://10.10.68.11:10000/file",
-        editor : "http://10.10.68.11:3001/cmw",
-        cookieDomain : "http://172.16.130.126:8084/official"
-
+        editor : "http://imzhiliao.com:3001/cmw",
+        cookieDomain : "http://172.16.170.69:8084/official"
     },
 
     //预发布

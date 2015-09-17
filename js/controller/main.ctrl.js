@@ -164,7 +164,6 @@ MPreschool.controller("MainCtrl",function($rootScope,$scope,$modal,SERVER,$locat
 
         })
 
-
     //添加子菜单
     $scope.addSubMenu = function(){
         
@@ -190,7 +189,6 @@ MPreschool.controller("MainCtrl",function($rootScope,$scope,$modal,SERVER,$locat
     //获得url参数
     var schoolCode = Util.getParam("schoolCode",paramList);
     var access_token =  Util.getParam("access_token",paramList);
-
 
 
     if(!schoolCode)
