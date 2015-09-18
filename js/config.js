@@ -7,7 +7,7 @@
 
 //常量配置
 MPreschool.constant("VERSION",{
-    vs : "113"
+    vs : "114"
 });
 
 
@@ -104,7 +104,7 @@ MPreschool.constant("SERVER", {
     //预发布
     formalUrl : {
         //微官网操作后台
-        mp  : "http://official.weixiao100.cn:9000",
+        mp  : "http://official.weixiao100.cn",
         //文件上传
         file : "http://imzhiliao.com:10000/file",
         editor : "http://imzhiliao.com:3001/cmw",
