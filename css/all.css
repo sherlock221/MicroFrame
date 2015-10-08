@@ -991,13 +991,32 @@ select:focus, input:focus {
   .micro-screen .close-btn {
     position: absolute;
     top: -11px;
+    right: -7px;
     z-index: 90;
     color: white;
     background: #fb6363;
-    font-size: 16px;
-    right: -7px;
-    padding: 0px 6px;
+    font-size: 12px;
+    padding: 0px 0;
     border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 21px;
+    display: none; }
+  .micro-screen .edit-btn {
+    position: absolute;
+    top: -11px;
+    left: -7px;
+    z-index: 90;
+    color: white;
+    background: #fb6363;
+    font-size: 12px;
+    padding: 0px 0;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 21px;
     display: none; }
   .micro-screen .micro-button-list {
     clear: both; }
@@ -1009,6 +1028,8 @@ select:focus, input:focus {
       .micro-screen .micro-button-list li:hover {
         opacity: 0.8; }
       .micro-screen .micro-button-list li:hover .close-btn {
+        display: inline-block; }
+      .micro-screen .micro-button-list li:hover .edit-btn {
         display: inline-block; }
       .micro-screen .micro-button-list li a {
         padding: 6px 7.5px;

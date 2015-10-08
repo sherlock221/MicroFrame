@@ -37,24 +37,31 @@
         </ul>
 </div>
 
-
 <ul class="micro-button-list mt20">
+
         <li ng-repeat="menu in menuList" ng-if="menu.menuName !='首页' ">
-
-
-                <a href="javascript:void(0)" ng-click="searchSubObj(menu)"  ng-if="menu.iconType == '1' "
-                   ng-style={'backgroundColor':menu.iconColor}   class="ib" style="position: relative;">
+                <!--ng-style={'backgroundColor':menu.iconColor}-->
+                <a   href="javascript:void(0)" ng-click="searchSubObj(menu)"    ng-if="menu.iconType == '1' "
+                    class="ib" style="position: relative;border: 1px solid #e7e7eb;">
                         <i class="block micro-{{menu.iconName}} micro-icon"></i>
-                        <span class="ib close-btn"  ng-click="stop($event);"   mwl-confirm title="提示操作"  on-confirm="delMenu(menu,$event)"   message="是否删除 ({{menu.menuName}}) 这条记录?"  confirm-text="确定"    cancel-text="取消">x</span>
+                        <span class="ib close-btn"  ng-click="stop($event);"   mwl-confirm title="提示操作"  on-confirm="delMenu(menu,$event)"   message="是否删除 ({{menu.menuName}}) 这条记录?"  confirm-text="确定"    cancel-text="取消">删</span>
+                        <span class="ib edit-btn" ng-click="editorMenuSys($event,menu)">修</span>
                 </a>
+
+
 
                 <a href="javascript:void(0)"  ng-click="searchSubObj(menu)" ng-if="menu.iconType == '2' "
-                   style="background-image: url('{{menu.iconUrl}}');"  class="ib custom-img" >
-                        <span class="ib close-btn"  ng-click="stop($event);"   mwl-confirm title="提示操作"  on-confirm="delMenu(menu,$event)"   message="是否删除 ({{menu.menuName}}) 这条记录?"  confirm-text="确定"    cancel-text="取消">x</span>
+                   style="background-image: url('{{menu.iconUrl}}');position: relative;"  class="ib custom-img" >
+
+                        <span class="ib close-btn"  ng-click="stop($event);"   mwl-confirm title="提示操作"
+                              on-confirm="delMenu(menu,$event)"   message="是否删除 ({{menu.menuName}}) 这条记录?"  confirm-text="确定"
+                              cancel-text="取消">
+                                删
+                        </span>
+
+                        <span class="ib edit-btn" ng-click="editorMenuSys($event,menu)">修</span>
+
                 </a>
-
-
-
 
 
                 <div>

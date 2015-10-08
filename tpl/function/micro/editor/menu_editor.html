@@ -18,11 +18,11 @@
                 <p class="tips">（必填）</p>
         </label>
 
-        <textarea ng-modal="editorItem.menuDesc"  class="form-control" placeholder="菜单描述" required></textarea>
+        <textarea ng-model="editorItem.menuDesc"  class="form-control" placeholder="菜单描述" required></textarea>
 
 </div>
 
-<div class="form-style-item">
+<div class="form-style-item" ng-hide="editorItem.isEditor">
 
         <label class="form-style-label fix">
                 <strong class="title">模板类型</strong>
@@ -38,7 +38,7 @@
 
 </div>
 
-<div class="form-style-item">
+<div class="form-style-item" >
 
         <label class="form-style-label fix">
                 <strong class="title">选择图标类型</strong>
@@ -54,7 +54,6 @@
                 <input type="radio" name="iconType" ng-model="editorItem.iconType"   ng-change="selectRadio()"  value="1" />
                 <label>系统图标</label>
         </div>
-
 </div>
 
 
@@ -76,7 +75,7 @@
                         </ui-select-match>
                         <ui-select-choices class="" repeat="icon in ICON_LIST | filter: $select.search">
                                 <div class="text-ellipsis">
-                                        <div class="ib micro-icon-ib">
+                                        <div class="ib ">
                                                 <i class="ib micro-icon micro-{{icon.iconName}}"></i>
                                         </div>
                                 </div>
@@ -87,34 +86,34 @@
         </div>
 
 
-        <div class="form-style-item">
+        <!--<div class="form-style-item">-->
 
-                <label class="form-style-label fix">
-                        <strong class="title">菜单背景</strong>
-                        <p class="tips">（必填）</p>
-                </label>
+                <!--<label class="form-style-label fix">-->
+                        <!--<strong class="title">菜单背景</strong>-->
+                        <!--<p class="tips">（必填）</p>-->
+                <!--</label>-->
 
-                <ui-select class="" ng-model="iconColorObj" theme="selectize" on-select="onItemColorSelect($item)">
-                        <ui-select-match placeholder="请选择一个背景色">
-                                <div>
-                                        {{$select.selected.iconColor}}
-                                </div>
-                        </ui-select-match>
+                <!--<ui-select class="" ng-model="iconColorObj" theme="selectize" on-select="onItemColorSelect($item)">-->
+                        <!--<ui-select-match placeholder="请选择一个背景色">-->
+                                <!--<div>-->
+                                        <!--{{$select.selected.iconColor}}-->
+                                <!--</div>-->
+                        <!--</ui-select-match>-->
 
-                        <ui-select-choices class="" repeat="icon in ICON_LIST | filter: $select.search">
-                                <div class="text-ellipsis">
-                                        <div class="ib micro-icon-ib">
-                                                <div class="ib" style="width: 40px;height: 40px;" ng-style="{'backgroundColor' : icon.iconColor}">
-                                                        <i class="ib micro-icon micro-{{editorItem.iconName}}"></i>
-                                                </div>
+                        <!--<ui-select-choices class="" repeat="icon in ICON_LIST | filter: $select.search">-->
+                                <!--<div class="text-ellipsis">-->
+                                        <!--<div class="ib micro-icon-ib">-->
+                                                <!--<div class="ib" style="width: 40px;height: 40px;" ng-style="{'backgroundColor' : icon.iconColor}">-->
+                                                        <!--<i class="ib micro-icon micro-{{editorItem.iconName}}"></i>-->
+                                                <!--</div>-->
 
-                                        </div>
-                                </div>
-                        </ui-select-choices>
+                                        <!--</div>-->
+                                <!--</div>-->
+                        <!--</ui-select-choices>-->
 
-                </ui-select>
+                <!--</ui-select>-->
 
-        </div>
+        <!--</div>-->
 
 
 </section>

@@ -270,6 +270,25 @@ MPreschool
                 return defer.promise;
             },
 
+
+             updateMenu : function(obj){
+                 var defer = $q.defer();
+                 var data = {
+                     "style": "",
+                     "data": obj,
+                     "clientInfo": {}
+                 };
+
+                 $http.post(SERVER.url.mp+"/osMenu/updateMenu",data)
+                     .success(function(result){
+                         defer.resolve(result);
+                     })
+                     .error(function(err){
+                         defer.reject(err);
+                     });
+                 return defer.promise;
+
+             },
             //添加按钮
             addMenu : function(obj){
                 var data = {

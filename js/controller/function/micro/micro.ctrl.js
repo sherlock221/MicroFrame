@@ -103,8 +103,6 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
     //查询子菜单
     $scope.searchSubObj = function (menu) {
         $scope.currentMenu = menu;
-
-
         $scope.isFirstIndex = false;
 
 
@@ -137,14 +135,22 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
                 $scope.editorItem = $scope.detailInfo;
                 $scope.toggleView(TEMPLATE_TYPE.CONTACT_INFO.TYPE);
             }
-
         });
     }
 
+    //修改按钮
+    $scope.editorMenuSys = function($event,menu){
+        $event.stopPropagation();
+        $scope.editorItem = menu;
+        $scope.currentMenu  = {
+            templateType : TEMPLATE_TYPE.MENU_ICON.CODE,
+        }
+
+        $scope.editorItem.isEditor = true;
+    }
 
     //去详情
     $scope.goDetail = function (detail, type) {
-
 
         if (type == "contact") {
             $scope.detailInfo = detail;
@@ -334,7 +340,6 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
                 $scope.isSubmit = false;
             });
 
-
         }
         else{
             //按钮下添加文章
@@ -418,20 +423,43 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
             return;
         }
 
-        MicroSev.updateArticle("",$scope.editorItem).then(function (res) {
-            if (res.rtnCode == "0000000") {
 
-                $rootScope.toastSuccess("修改成功");
-                //刷新
-                $scope.searchSubObj($scope.currentMenu);
-            }
-            else {
-                $rootScope.toastError(res.msg);
-            }
-            $scope.isSubmit = false;
-        }, function () {
-            $scope.isSubmit = false;
-        });
+        if($scope.editorItem.templateType){
+
+            MicroSev.updateMenu($scope.editorItem).then(function (res) {
+                if (res.rtnCode == "0000000") {
+
+                    $rootScope.toastSuccess("修改成功");
+                    //刷新
+                    //$scope.searchSubObj($scope.currentMenu);
+                }
+                else {
+                    $rootScope.toastError(res.msg);
+                }
+                $scope.isSubmit = false;
+            }, function () {
+                $scope.isSubmit = false;
+            });
+        }
+        else{
+            MicroSev.updateArticle("",$scope.editorItem).then(function (res) {
+                if (res.rtnCode == "0000000") {
+
+                    $rootScope.toastSuccess("修改成功");
+                    //刷新
+                    $scope.searchSubObj($scope.currentMenu);
+                }
+                else {
+                    $rootScope.toastError(res.msg);
+                }
+                $scope.isSubmit = false;
+            }, function () {
+                $scope.isSubmit = false;
+            });
+
+        }
+
+
 
     }
 
@@ -498,6 +526,7 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
                     //清空item
                     $scope.editorItem = "";
                     searchBanner();
+                    //$scope.bannerList.removeObj(banner);
                 }
                 else {
                     $rootScope.toastError(res.msg);
