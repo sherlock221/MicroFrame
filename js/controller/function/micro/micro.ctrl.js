@@ -517,8 +517,6 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
 
     //删除menu
     $scope.delMenu = function(menu){
-
-
         MicroSev.removeMenu(menu.id)
             .then(function (res) {
                 if (res.rtnCode == "0000000") {
