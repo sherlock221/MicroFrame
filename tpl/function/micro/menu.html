@@ -1,9 +1,9 @@
 
 
-<!-- banner -->
-<div class="banner-bg " ng-if="bannerList.length > 0">
-        <div class="banner-img-wrap" ng-repeat="banner in  bannerList">
 
+<!-- banner -->
+<ul ng-if="bannerList.length > 0" class="banner-bg" rn-carousel=""  rn-carousel-index="$root.carouselIndex" >
+        <li class="banner-img-wrap" ng-repeat="banner in  bannerList">
                 <img  class="tile-img banner-img" ng-src="{{banner.imgUrl}}" />
 
                 <div class="mask-layer ">
@@ -12,28 +12,18 @@
                         <div class="mask-top text-center" style="line-height: 60px;">
 
                                 <div class="ib menuIcons" >
-                                        <!--<i class="pos-high ib icon icon-18-edit vm" ng-click="bannerAddTemp();"></i>-->
+                                        <i class="pos-high ib icon icon-18-add vm" ng-click="bannerAddTemp();"></i>
                                         <i class="pos-high ib icon icon-18-edit vm" ng-click="updateBannerLayer(banner);"></i>
                                         <i class="pos-high ib icon icon-18-delete vm"  mwl-confirm title="提示操作"  on-confirm="removeBannerLayer(banner)"   message="是否删除  这个banner?"  confirm-text="确定"    cancel-text="取消"></i>
                                 </div>
                         </div>
 
                 </div>
-
-        </div>
-</div>
-
-<!--<ul    class="banner"-->
-       <!--rn-carousel-->
-       <!--rn-carousel-index="carouselIndex2"-->
-       <!--rn-carousel-auto-slide rn-carousel-pause-on-hover-->
-       <!--rn-carousel-buffered class="carousel2">-->
-        <!--<li ng-repeat="banner in bannerList" >-->
-                <!--<a class="block img-banner" style="background-image: url({{banner.imgUrl}})"></a>-->
-        <!--</li>-->
-<!--</ul>-->
+        </li>
+</ul>
 
 
+<div  class="sliders" rn-carousel-indicators ng-if="bannerList.length > 1" slides="bannerList" rn-carousel-index="$root.carouselIndex"></div>
 
 
 
@@ -50,12 +40,23 @@
 
 <ul class="micro-button-list mt20">
         <li ng-repeat="menu in menuList" ng-if="menu.menuName !='首页' ">
-                <a href="javascript:void(0)" ng-click="searchSubObj(menu)"   ng-style={'backgroundColor':menu.iconColor}   class="ib" style="position: relative;">
+
+
+                <a href="javascript:void(0)" ng-click="searchSubObj(menu)"  ng-if="menu.iconType == '1' "
+                   ng-style={'backgroundColor':menu.iconColor}   class="ib" style="position: relative;">
                         <i class="block micro-{{menu.iconName}} micro-icon"></i>
-
                         <span class="ib close-btn"  ng-click="stop($event);"   mwl-confirm title="提示操作"  on-confirm="delMenu(menu,$event)"   message="是否删除 ({{menu.menuName}}) 这条记录?"  confirm-text="确定"    cancel-text="取消">x</span>
-
                 </a>
+
+                <a href="javascript:void(0)"  ng-click="searchSubObj(menu)" ng-if="menu.iconType == '2' "
+                   style="background-image: url('{{menu.iconUrl}}');"  class="ib custom-img" >
+                        <span class="ib close-btn"  ng-click="stop($event);"   mwl-confirm title="提示操作"  on-confirm="delMenu(menu,$event)"   message="是否删除 ({{menu.menuName}}) 这条记录?"  confirm-text="确定"    cancel-text="取消">x</span>
+                </a>
+
+
+
+
+
                 <div>
                         <span>{{menu.menuName}}</span>
                 </div>
@@ -63,12 +64,12 @@
 
         </li>
 
-                <li class="util">
-                        <a class="ib addText" ng-click="addMenu();">
-                                <i class="icon ib icon-36-add"></i>
-                        </a>
-                        <div>
-                                <span >添加菜单</span>
-                        </div>
-                </li>
+        <li class="util">
+                <a class="ib addText" ng-click="addMenu();">
+                        <i class="icon ib icon-36-add"></i>
+                </a>
+                <div>
+                        <span >添加菜单</span>
+                </div>
+        </li>
 </ul>

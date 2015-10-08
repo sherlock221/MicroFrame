@@ -134,6 +134,14 @@
   width: 36px;
   height: 36px; }
 
+.icon-18-add {
+  background-position: 0 -4281px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer; }
+  .icon-18-add:hover {
+    background-position: 0 -4308px; }
+
 .icon-phone-img {
   background-position: -382px 0;
   width: 18px;
@@ -839,7 +847,8 @@ select:focus, input:focus {
 .banner-bg {
   margin: -15px -15px 0 -15px;
   position: relative;
-  overflow: hidden; }
+  overflow: hidden;
+  min-height: 160px; }
   .banner-bg .mask-layer {
     cursor: pointer; }
   .banner-bg .banner-img-wrap .mask-layer {
@@ -854,6 +863,16 @@ select:focus, input:focus {
     -ms-transform: translateY(107px); }
   .banner-bg .banner-img {
     height: 160px; }
+
+.sliders {
+  position: absolute;
+  top: 57px;
+  right: 34px; }
+
+.custom-img {
+  width: 51px;
+  height: 51px;
+  position: relative; }
 
 .msg_tips {
   margin-bottom: 20px;

@@ -280,8 +280,9 @@ MPreschool
                         "menuName" : obj.menuName,
                         "iconName" : obj.iconName,
                         "iconColor" : obj.iconColor,
-                        "iconType"  : 1,
-                        "menuUrl"  : obj.menuUrl
+                        "iconType"  : obj.iconType,
+                        "menuUrl"  : obj.menuUrl,
+                        "iconUrl"  : obj.photoImgUrl
                     },
                     "clientInfo": {}
                 };

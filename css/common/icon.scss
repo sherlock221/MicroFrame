@@ -122,6 +122,18 @@ $iconMpHeight : 16px;
 
 }
 
+.icon-18-add{
+  background-position: 0 -4281px;
+  width: 18px;
+  height: 18px;
+
+  cursor: pointer;
+
+  &:hover{
+    background-position: 0 -4308px;
+  }
+}
+
 .icon-phone-img{
   background-position:  rem(-764) 0;
   width: rem(36);

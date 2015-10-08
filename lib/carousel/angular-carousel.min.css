@@ -43,7 +43,8 @@ ul[rn-carousel-transition=hexagon] {
 
 div.rn-carousel-indicator span {
     cursor: pointer;
-    color: #666
+    color: #666;
+    font-size: 20px;
 }
 
 div.rn-carousel-indicator span.active {
