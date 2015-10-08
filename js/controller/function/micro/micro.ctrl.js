@@ -56,6 +56,8 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
     });
 
 
+
+
     var getTemplateByCode = function(code){
 
         var array  =  _.toArray(TEMPLATE_TYPE);
@@ -85,6 +87,7 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
             $scope.menuList = res.bizData;
         });
     }
+
 
 
     //添加
@@ -120,7 +123,6 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
 
 
         $scope.isFirstIndex = false;
-
 
         MicroSev.getSubMicro(menu.id).then(function (res) {
 
@@ -486,6 +488,20 @@ MPreschool.controller("MicroContentCtrl", function ($rootScope, $scope, $sce, Ut
             isAdd : true
         };
     }
+
+
+    //添加banner
+    $scope.bannerAddTemp = function(){
+        $scope.editorItem = {
+            imgUrl : "",
+            isBanner : true,
+            isAdd : true
+        };
+
+        console.log("add banner...");
+
+    }
+
 
     //删除banner
     $scope.removeBannerLayer = function (banner) {

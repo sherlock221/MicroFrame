@@ -15,7 +15,8 @@ var MPreschool = angular.module('MPreschool', [
     "ngFileUpload",
     "mwl.confirm",
     'ui.select',
-    'lock-umeditor'
+    'lock-umeditor',
+    'angular-carousel'
 ]);
 
 

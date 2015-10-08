@@ -9,10 +9,12 @@
   overflow: hidden;
 
   .mask-layer{
-    @include transition(all 0.3s ease 0s);
+    cursor: pointer;
+    //@include transition(transform 0.3s ease );
   }
 
   .banner-img-wrap{
+
     .mask-layer{
       @include transform(translateY(160px));
     }
@@ -42,7 +44,6 @@
 
   border: 1px solid $border-light-gray;
   background-color: #fff;
-
 
    .menu-content{
       min-height: 500px;

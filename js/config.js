@@ -7,7 +7,7 @@
 
 //常量配置
 MPreschool.constant("VERSION",{
-    vs : "114"
+    vs : "115"
 });
 
 
